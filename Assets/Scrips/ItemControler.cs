@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class ItemControler : MonoBehaviour
 {
-  public Item Item;
+    // Variable pública para asignar un objeto de tipo Item
+    public Item Item;
 }
