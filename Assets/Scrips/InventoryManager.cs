@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Profiling;
 using UnityEngine.UI;
 using static UnityEditor.PlayerSettings;
+using TMPro;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -18,52 +19,107 @@ public class InventoryManager : MonoBehaviour
     // Prefab que representa un ítem del inventario en la UI
     public GameObject InventoryItem;
 
+    public Toggle EnableRemove;
+
+    public scr_InventoryItemController[] InventroryItems;
+
     private void Awake()
     {
-        Instance = this;
+        // Implementación del patrón Singleton
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Método para añadir un ítem al inventario
     public void Add(Item item)
-    { 
+    {
         Items.Add(item);
-        Debug.LogWarning("ADD");
+        Debug.LogWarning("Ítem añadido: " + item.itemsName);
+        ListItems(); // Actualiza la UI del inventario
     }
 
     // Método para eliminar un ítem del inventario
     public void Remove(Item item)
     {
         Items.Remove(item);
-
+        Debug.LogWarning("Ítem eliminado: " + item.itemsName);
+        ListItems(); // Actualiza la UI del inventario
     }
 
-  // Método para mostrar todos los ítems en el inventario 
-    public void ListItemse()
+    // Método para mostrar todos los ítems en el inventario 
+    public void ListItems()
     {
-       
-        //Limpia el inventario
-        /*foreach (Transform item in ItemContent)
+        // Limpia el inventario
+        foreach (Transform item in ItemContent)
         {
             Destroy(item.gameObject);
-            Debug.LogWarning("Limpia el inventario");
+        }
 
-        }*/
-       // Recorre todos los ítems en la lista del inventario
+        // Recorre todos los ítems en la lista del inventario
         foreach (var item in Items)
         {
-            Debug.LogWarning("DENTRO FOR");
-
-            //Crea un nuevo objeto en el inventario
+            // Crea un nuevo objeto en el inventario
             GameObject obj = Instantiate(InventoryItem, ItemContent);
-            Debug.LogWarning("OBJETO CREADO");
+            Debug.LogWarning("Objeto creado para: " + item.itemsName);
 
-            //Busca el objeto hijo qu tiene el nombre "itemName" y lo pone el itemsName
-            var itemsName = obj.transform.Find("itemsName").GetComponent<Text>();
-            
+            // Busca el objeto hijo que tiene el nombre "itemsName"
+            var itemsNameTransform = obj.transform.Find("itemsName");
+         
+            var itemsName = itemsNameTransform.GetComponent<TextMeshProUGUI>();
+
+            var removeButton = obj.transform.Find("RemoveButton").GetComponent<Button>();
+
             itemsName.text = item.itemsName;
-            Debug.LogWarning("REFERENCIADO");
+            Debug.LogWarning("Nombre del ítem referenciado: " + item.itemsName);
+
+            if (EnableRemove.isOn)
+            {
+                removeButton.gameObject.SetActive(true);
+            }
         }
-        Debug.LogWarning("Fuera del FOR");
+
+        SetInvetoryItems();
     }
 
+    // Método que se puede llamar al recoger un ítem
+    public void OnItemPicked(Item item)
+    {
+        Add(item); // Añade el ítem al inventario
+    }
+
+    public void EnableItemsRemove()
+    {
+        if (EnableRemove.isOn)
+        {
+            foreach( Transform item in ItemContent)
+            {
+                item.Find("RemoveButton").gameObject.SetActive(true);
+            }
+
+        }
+        else
+        {
+            foreach (Transform item in ItemContent)
+            {
+                item.Find("RemoveButton").gameObject.SetActive(false);
+            }
+
+        }
+    }
+
+    public void SetInvetoryItems()
+    {
+        InventroryItems = ItemContent.GetComponentsInChildren<scr_InventoryItemController>();
+
+        for (int i = 0; i < Items.Count; i++)
+        {
+            InventroryItems[i].AddItem(Items[i]);
+        }
+    }
 }

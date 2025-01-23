@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: capsula
   m_EditorClassIdentifier: 
   id: 2
-  itemsName: 
+  itemsName: Capsula
   value: 33

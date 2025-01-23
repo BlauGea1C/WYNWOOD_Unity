@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: cubo
   m_EditorClassIdentifier: 
   id: 1
-  itemName: HOLA
+  itemsName: Cubo
   value: 12
-  icon: {fileID: 0}
