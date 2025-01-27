@@ -73,9 +73,16 @@ public class InventoryManager : MonoBehaviour
          
             var itemsName = itemsNameTransform.GetComponent<TextMeshProUGUI>();
 
+           // var itemImage = obj.transform.Find("Image").GetComponent<Image>();
+
+
             var removeButton = obj.transform.Find("RemoveButton").GetComponent<Button>();
 
             itemsName.text = item.itemsName;
+
+           // itemImage.sprite = item.icon;
+
+
             Debug.LogWarning("Nombre del ítem referenciado: " + item.itemsName);
 
             if (EnableRemove.isOn)

@@ -15,3 +15,4 @@ MonoBehaviour:
   id: 1
   itemsName: Cubo
   value: 12
+  ItemIcono: {fileID: 21300000, guid: f7eba9ea41fa7c740b24461a790131f0, type: 3}
