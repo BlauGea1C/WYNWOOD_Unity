@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Profiling;
-using UnityEngine.UI;
-using static UnityEditor.PlayerSettings;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -19,7 +17,8 @@ public class InventoryManager : MonoBehaviour
     // Prefab que representa un ítem del inventario en la UI
     public GameObject InventoryItem;
 
-    public Toggle EnableRemove;
+    // Contenedor de la UI del inventario
+    public GameObject InventoryUI;
 
     public scr_InventoryItemController[] InventroryItems;
 
@@ -36,6 +35,15 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    // Método para alternar la visibilidad del inventario
+    public void ToggleInventoryUI()
+    {
+        if (InventoryUI != null)
+        {
+            InventoryUI.SetActive(!InventoryUI.activeSelf);
+        }
+    }
+
     // Método para añadir un ítem al inventario
     public void Add(Item item)
     {
@@ -44,15 +52,7 @@ public class InventoryManager : MonoBehaviour
         ListItems(); // Actualiza la UI del inventario
     }
 
-    // Método para eliminar un ítem del inventario
-    public void Remove(Item item)
-    {
-        Items.Remove(item);
-        Debug.LogWarning("Ítem eliminado: " + item.itemsName);
-        ListItems(); // Actualiza la UI del inventario
-    }
-
-    // Método para mostrar todos los ítems en el inventario 
+    // Método para mostrar todos los ítems en el inventario
     public void ListItems()
     {
         // Limpia el inventario
@@ -70,25 +70,19 @@ public class InventoryManager : MonoBehaviour
 
             // Busca el objeto hijo que tiene el nombre "itemsName"
             var itemsNameTransform = obj.transform.Find("itemsName");
-         
             var itemsName = itemsNameTransform.GetComponent<TextMeshProUGUI>();
+            Debug.LogWarning("Objeto creado para: " + item.itemsName);
 
-           // var itemImage = obj.transform.Find("Image").GetComponent<Image>();
-
-
-            var removeButton = obj.transform.Find("RemoveButton").GetComponent<Button>();
+            // Busca el objeto hijo que tiene el nombre "ItemIcono"
+            var itemsIconoTransform = obj.transform.Find("ItemIcono");
+            var ItemIcono = itemsIconoTransform.GetComponent<Image>();
+            Debug.LogWarning("Objeto creado para: " + item.ItemIcono);
 
             itemsName.text = item.itemsName;
-
-           // itemImage.sprite = item.icon;
-
+            ItemIcono.sprite = item.ItemIcono;
 
             Debug.LogWarning("Nombre del ítem referenciado: " + item.itemsName);
-
-            if (EnableRemove.isOn)
-            {
-                removeButton.gameObject.SetActive(true);
-            }
+            Debug.LogWarning("Imagen del ítem referenciado: " + item.ItemIcono);
         }
 
         SetInvetoryItems();
@@ -98,26 +92,6 @@ public class InventoryManager : MonoBehaviour
     public void OnItemPicked(Item item)
     {
         Add(item); // Añade el ítem al inventario
-    }
-
-    public void EnableItemsRemove()
-    {
-        if (EnableRemove.isOn)
-        {
-            foreach( Transform item in ItemContent)
-            {
-                item.Find("RemoveButton").gameObject.SetActive(true);
-            }
-
-        }
-        else
-        {
-            foreach (Transform item in ItemContent)
-            {
-                item.Find("RemoveButton").gameObject.SetActive(false);
-            }
-
-        }
     }
 
     public void SetInvetoryItems()

@@ -8,12 +8,12 @@ public class scr_InventoryItemController : MonoBehaviour
    Item item;
 
     public Button RemoveBtn;
-    public void RemoveItem()
+    /*public void RemoveItem()
     {
         InventoryManager.Instance.Remove(item);
 
         Destroy(gameObject);
-    }
+    }*/
 
     public void AddItem(Item newItem)
     {

@@ -19,6 +19,9 @@ public class Scr_PlayerMovement : MonoBehaviour
     CharacterController controller;
     Camera playerCamera;
 
+    // Referencia al script de inventario
+    public InventoryManager inventoryManager;
+
     // Variables para la cámara virtual de Cinemachine
     public CinemachineVirtualCamera virtualCam;
 
@@ -31,6 +34,12 @@ public class Scr_PlayerMovement : MonoBehaviour
         {
             Debug.LogError("Cinemachine Virtual Camera not assigned!");
         }
+
+        // Verifica que el script de inventario esté asignado
+        if (inventoryManager == null)
+        {
+            Debug.LogError("Inventory Manager not assigned!");
+        }
     }
 
     void Update()
@@ -40,6 +49,13 @@ public class Scr_PlayerMovement : MonoBehaviour
 
         // Rotación de la cámara
         LookAround();
+
+        // Detecta cuando el jugador presiona la tecla E
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Llama a la función para alternar la visibilidad del inventario
+            inventoryManager.ToggleInventoryUI();
+        }
     }
 
     void MovePlayer()
@@ -87,8 +103,5 @@ public class Scr_PlayerMovement : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f); // Limita la rotación vertical de la cámara
         playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-
-        // En una Cinemachine Virtual Camera no se maneja como en una FreeLook, pero la cámara seguirá al jugador automáticamente
-        // Lo importante es que la cámara está atada a la jerarquía del jugador
     }
 }
