@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aabfd7aa150adaa438f057ee46c8e81b, type: 3}
-  m_Name: capsula
+  m_Name: Diario
   m_EditorClassIdentifier: 
-  id: 2
-  itemsName: Capsula
-  value: 33
+  itemsName: Diario
+  ItemIcono: {fileID: 0}
