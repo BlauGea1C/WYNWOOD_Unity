@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1370832603236722398
+--- !u!1 &3422368144062504625
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7503462343225058566}
-  - component: {fileID: 2571696199580632751}
-  - component: {fileID: 811927801296307059}
-  - component: {fileID: 3751614050337607049}
-  - component: {fileID: -6648040794945580875}
-  - component: {fileID: 1693972944138747652}
+  - component: {fileID: 1360010244865145536}
+  - component: {fileID: 7655528147334118762}
+  - component: {fileID: 7114255398070721850}
+  - component: {fileID: 8566878568377379056}
+  - component: {fileID: 1966325877229917289}
+  - component: {fileID: 5453793376532916291}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Llave_caja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7503462343225058566
+--- !u!4 &1360010244865145536
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370832603236722398}
+  m_GameObject: {fileID: 3422368144062504625}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.488945, y: 2.1, z: -17.6}
@@ -36,21 +36,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2571696199580632751
+--- !u!33 &7655528147334118762
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370832603236722398}
+  m_GameObject: {fileID: 3422368144062504625}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &811927801296307059
+--- !u!23 &7114255398070721850
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370832603236722398}
+  m_GameObject: {fileID: 3422368144062504625}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,13 +86,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3751614050337607049
+--- !u!65 &8566878568377379056
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370832603236722398}
+  m_GameObject: {fileID: 3422368144062504625}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -107,29 +107,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-6648040794945580875
+--- !u!114 &1966325877229917289
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370832603236722398}
+  m_GameObject: {fileID: 3422368144062504625}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1730bd9eb21c99f4cbf504ae13481a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 0}
---- !u!114 &1693972944138747652
+  Item: {fileID: 11400000, guid: 934fa37c37dacd440abe13253c095c26, type: 2}
+--- !u!114 &5453793376532916291
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370832603236722398}
+  m_GameObject: {fileID: 3422368144062504625}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dec2aa86292e7004a8ff31c95b54700d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: 5529b23bc46d88645a5c8510f8582e9d, type: 2}
+  Item: {fileID: 11400000, guid: 934fa37c37dacd440abe13253c095c26, type: 2}

@@ -81,6 +81,8 @@ public class InventoryManager : MonoBehaviour
             itemsName.text = item.itemsName;
             ItemIcono.sprite = item.ItemIcono;
 
+            Debug.LogAssertion("Nombre del ítem referenciado: " + item.itemsName);
+
             Debug.LogWarning("Nombre del ítem referenciado: " + item.itemsName);
             Debug.LogWarning("Imagen del ítem referenciado: " + item.ItemIcono);
         }

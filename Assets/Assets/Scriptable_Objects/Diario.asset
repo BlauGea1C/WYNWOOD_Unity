@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Diario
   m_EditorClassIdentifier: 
   itemsName: Diario
-  ItemIcono: {fileID: 0}
+  ItemIcono: {fileID: 21300000, guid: b2d0479ed36e7524eb9c9af04911c6a0, type: 3}

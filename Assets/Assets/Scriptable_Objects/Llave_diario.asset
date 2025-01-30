@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Llave_diario
   m_EditorClassIdentifier: 
   itemsName: Llave diario
-  ItemIcono: {fileID: 21300000, guid: f7eba9ea41fa7c740b24461a790131f0, type: 3}
+  ItemIcono: {fileID: 21300000, guid: 34a49a978f9d89f4ba3a68c4181287cb, type: 3}
