@@ -92,16 +92,17 @@ public class Scr_PlayerMovement : MonoBehaviour
 
     void LookAround()
     {
-        // Movimiento de la cámara (mirar alrededor)
+        // Obtener el movimiento del ratón
         float mouseX = Input.GetAxis("Mouse X") * LookSpeed;
-        float mouseY = Input.GetAxis("Mouse Y") * VerticalLookSpeed;
+        float mouseY = Input.GetAxis("Mouse Y") * LookSpeed;
 
-        // Rotación del jugador en el eje X (izquierda/derecha)
+        // Rotación horizontal (y del jugador)
         transform.Rotate(Vector3.up * mouseX);
 
-        // Rotación de la cámara en el eje Y (arriba/abajo)
+        // Rotación vertical (cámara)
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f); // Limita la rotación vertical de la cámara
-        playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        xRotation = Mathf.Clamp(xRotation, -80f, 80f);  // Limitar la rotación vertical para evitar voltear la cámara
+
+        virtualCam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);  // Aplicar rotación vertical
     }
 }

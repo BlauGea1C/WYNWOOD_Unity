@@ -9,13 +9,16 @@ public class ItemsP : MonoBehaviour
     //Recoge el ítem
     void Pickup()
     {
-        // Llama al método Add() del InventoryManager para añadir el ítem al inventario
-        InventoryManager.Instance.Add(Item);
+        if (!FindAnyObjectByType<InventoryManager>().gameObject)
+        {
+            // Llama al método Add() del InventoryManager para añadir el ítem al inventario
+            InventoryManager.Instance.Add(Item);
 
-        // Destruye el objeto en la escena, ya que el ítem fue recogido
-        Destroy(gameObject);
-
+            // Destruye el objeto en la escena, ya que el ítem fue recogido
+            Destroy(gameObject);
+        }
     }
+
     //El jugador hace clic sobre el objeto en la escena
     private void OnMouseDown()
     {
