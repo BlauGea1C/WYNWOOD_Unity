@@ -270,8 +270,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f2d66733cf1fe48b961576ed5ae071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseBtn: {fileID: 0}
-  CloseBtn: {fileID: 0}
+  ItemPanel: {fileID: 0}
+  PanelItemImage: {fileID: 0}
+  PanelItemName: {fileID: 0}
 --- !u!1 &2733575808084272142
 GameObject:
   m_ObjectHideFlags: 0
