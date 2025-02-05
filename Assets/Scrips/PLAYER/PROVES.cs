@@ -1,7 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 
-public class Scr_PlayerMovement : MonoBehaviour
+public class PROVES : MonoBehaviour
 {
     public float MoveSpeed = 5f;
     public float LookSpeed = 2f;
@@ -16,7 +16,7 @@ public class Scr_PlayerMovement : MonoBehaviour
     CharacterController controller;
     Camera playerCamera;
 
-    public InventoryManager inventoryManager;
+    //public InventoryManager inventoryManager;
     public CinemachineVirtualCamera virtualCam;
 
     void Start()
@@ -29,25 +29,25 @@ public class Scr_PlayerMovement : MonoBehaviour
             Debug.LogError("Cinemachine Virtual Camera not assigned!");
         }
 
-        if (inventoryManager == null)
+       /* if (inventoryManager == null)
         {
             Debug.LogError("Inventory Manager not assigned!");
-        }
+        }*/
 
         // Oculta el cursor al inicio del juego
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
-        if (!inventoryManager.IsInventoryOpen())
+       /* if (!inventoryManager.IsInventoryOpen())
         {
             MovePlayer();
             LookAround();
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             inventoryManager.ToggleInventoryUI();
             bool inventoryIsOpen = inventoryManager.IsInventoryOpen();
@@ -63,7 +63,7 @@ public class Scr_PlayerMovement : MonoBehaviour
 
             // Mostrar o esconder el cursor según el estado del inventario
             Cursor.visible = inventoryIsOpen;
-        }
+        }*/
     }
 
     void MovePlayer()
