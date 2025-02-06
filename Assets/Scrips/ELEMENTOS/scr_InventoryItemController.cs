@@ -1,41 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class scr_InventoryItemController : MonoBehaviour
 {
-    Item item;
-
-    //public Button UseBtn;  // Botón de usar
-   // public Button CloseBtn; // Botón de cerrar
-
-    public GameObject ItemPanel; // Panel donde se muestra la información del ítem
-   // public Image PanelItemImage; // Imagen del ítem en el panel
-   // public TextMeshProUGUI PanelItemName; // Nombre del ítem en el panel
+    private Item item;
+    public GameObject ItemPanel; // Panel donde se muestra el ítem
+    public Visor3D visor3D; // Referencia al Visor3D
 
     public void AddItem(Item newItem)
     {
         item = newItem;
-        GetComponent<Button>().onClick.AddListener(SelectItem);
+        // Añadir un listener al botón del inventario para activar el visor 3D
+        GetComponent<Button>().onClick.AddListener(ActivarVisor);
     }
 
-    public void SelectItem()
+    public void ActivarVisor()
     {
-        if (ItemPanel != null)
+        // Si el visor3D no es nulo, activamos el visor
+        if (visor3D != null)
         {
-            ItemPanel.SetActive(true); // Mostrar el panel
-          //  PanelItemName.text = item.itemsName; // Asignar nombre
-           // PanelItemImage.sprite = item.ItemIcono; // Asignar imagen
-        }
-    }
-
-    public void CloseItemPanel()
-    {
-        if (ItemPanel != null)
-        {
-            ItemPanel.SetActive(false); // Ocultar el panel
+            visor3D.ActivarVisor3D();
         }
     }
 }

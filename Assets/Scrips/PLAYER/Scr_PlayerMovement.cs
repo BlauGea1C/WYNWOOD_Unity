@@ -47,7 +47,7 @@ public class Scr_PlayerMovement : MonoBehaviour
             LookAround();
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             inventoryManager.ToggleInventoryUI();
             bool inventoryIsOpen = inventoryManager.IsInventoryOpen();

@@ -1,50 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Visor3D : MonoBehaviour
 {
-    public GameObject ObjVisual;
-    public GameObject camaraVisual;
-    public GameObject objEnEscena;
+    public GameObject camaraVisual; // `CameraVista3D`
+    public GameObject camaraJugador; // `Virtual Camera`
+    public GameObject objEnEscena; // Objeto en la escena (por ejemplo, el ítem 3D)
 
-    public bool activa;
-
-    // Update is called once per frame
-    void Update()
+    // Método para activar el visor 3D
+    public void ActivarVisor3D()
     {
-        if(Input.GetKeyDown(KeyCode.E) && activa == true)
-        {
-            ObjVisual.SetActive(true);
-            camaraVisual.SetActive(true);
-            objEnEscena.SetActive(false);
-        }
+        // Liberamos el cursor para que el jugador pueda interactuar con el visor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
-        if (Input.GetKeyDown(KeyCode.Escape) && activa == true)
-        {
-            ObjVisual.SetActive(false);
-            camaraVisual.SetActive(false);
-            objEnEscena.SetActive(true);
-        }
+        // Desactivamos la cámara del jugador y activamos la cámara del visor 3D
+        camaraJugador.SetActive(false);
+        camaraVisual.SetActive(true);
 
+        // Ocultamos el objeto en la escena
+        objEnEscena.SetActive(false);
     }
 
-    private void OnTriggerEnter(Collider other)
+    // Método para desactivar el visor 3D
+    public void DesactivarVisor3D()
     {
-        if(other.tag == "Player"){
-            activa = true;
-        }
+        // Rehacemos las configuraciones de la cámara y el cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        // Volvemos a activar la cámara del jugador y desactivamos la cámara del visor 3D
+        camaraJugador.SetActive(true);
+        camaraVisual.SetActive(false);
+
+        // Mostramos el objeto nuevamente en la escena
+        objEnEscena.SetActive(true);
     }
 
-    private void OnTriggerExit(Collider other)
+    // Detectar la tecla Q para cerrar el visor
+    private void Update()
     {
-        if (other.tag == "Player")
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            activa = false;
-            ObjVisual.SetActive(false);
-            camaraVisual.SetActive(false);
-            objEnEscena.SetActive(true);
-
+            // Llamar a DesactivarVisor3D cuando se presione la tecla Q
+            DesactivarVisor3D();
         }
     }
 }
