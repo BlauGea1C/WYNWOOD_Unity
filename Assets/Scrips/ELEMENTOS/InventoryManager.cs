@@ -8,20 +8,22 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
 
-    public List<Item> Items = new List<Item>();
+    public List<Item> Items = new List<Item>(); // Lista de ítems en el inventario
 
-    public Transform ItemContent;
-    public GameObject InventoryItem;
-    public GameObject InventoryUI;
-    public GameObject mira;
+    public Transform ItemContent;  // Contenedor en la UI para mostrar los ítems
+    public GameObject InventoryItem; // Prefab de los ítems del inventario
+    public GameObject InventoryUI;  // UI del inventario
 
-    public scr_InventoryItemController[] InventroryItems;
+    public scr_InventoryItemController[] InventoryItems;
+
+    public GameObject CanvasRawImage; //Referencia al RawImage en la UI
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+           
         }
         else
         {
@@ -29,29 +31,27 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    // Alterna la visibilidad del inventario
     public void ToggleInventoryUI()
     {
-        if (InventoryUI != null && mira != null)
+        if (InventoryUI != null)
         {
             InventoryUI.SetActive(!InventoryUI.activeSelf);
-            mira.SetActive(!InventoryUI.activeSelf);
         }
     }
 
-    public bool IsInventoryOpen()
-    {
-        return InventoryUI.activeSelf;
-    }
-
+    // Añadir ítem al inventario
     public void Add(Item item)
     {
         Items.Add(item);
-        Debug.LogWarning("Ítem añadido: " + item.itemsName);
-        ListItems();
+        Debug.Log("Ítem añadido: " + item.itemsName);
+        ListItems(); // Actualizar la UI
     }
 
+    // Actualizar la UI del inventario
     public void ListItems()
     {
+        // Limpia los ítems existentes en la UI
         foreach (Transform item in ItemContent)
         {
             Destroy(item.gameObject);
@@ -60,7 +60,7 @@ public class InventoryManager : MonoBehaviour
         foreach (var item in Items)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
-            Debug.LogWarning("Objeto creado para: " + item.itemsName);
+            Debug.Log("Objeto creado para: " + item.itemsName);
 
             var itemsNameTransform = obj.transform.Find("itemsName");
             var itemsName = itemsNameTransform.GetComponent<TextMeshProUGUI>();
@@ -70,23 +70,37 @@ public class InventoryManager : MonoBehaviour
 
             itemsName.text = item.itemsName;
             ItemIcono.sprite = item.ItemIcono;
+
+            //Configurar el controlador del ítem
+            scr_InventoryItemController itemController = obj.GetComponent<scr_InventoryItemController>();
+            itemController.AddItem(item);
         }
 
-        SetInvetoryItems();
+        SetInventoryItems();
     }
 
     public void OnItemPicked(Item item)
     {
-        Add(item);
+        Add(item); // Añade el ítem y actualiza el inventario
     }
 
-    public void SetInvetoryItems()
+    public void SetInventoryItems()
     {
-        InventroryItems = ItemContent.GetComponentsInChildren<scr_InventoryItemController>();
+        InventoryItems = ItemContent.GetComponentsInChildren<scr_InventoryItemController>();
 
-        for (int i = 0; i < Items.Count; i++)
+        int itemCount = Mathf.Min(Items.Count, InventoryItems.Length);
+        for (int i = 0; i < itemCount; i++)
         {
-            InventroryItems[i].AddItem(Items[i]);
+            InventoryItems[i].AddItem(Items[i]);
+        }
+    }
+
+    // Método para activar el RawImage al seleccionar un ítem
+    public void ShowRawImage()
+    {
+        if (CanvasRawImage != null)
+        {
+            CanvasRawImage.SetActive(true);
         }
     }
 }

@@ -3,23 +3,28 @@ using UnityEngine.UI;
 
 public class scr_InventoryItemController : MonoBehaviour
 {
-    private Item item;
-    public GameObject ItemPanel; // Panel donde se muestra el ítem
-    public Visor3D visor3D; // Referencia al Visor3D
+    Item item;
+ 
+    private void Start()
+    {
+        // Agrega un evento al botón del objeto en el inventario
+        GetComponent<Button>().onClick.AddListener(SelectItem);
+    }
 
     public void AddItem(Item newItem)
     {
         item = newItem;
-        // Añadir un listener al botón del inventario para activar el visor 3D
-        GetComponent<Button>().onClick.AddListener(ActivarVisor);
     }
 
-    public void ActivarVisor()
+    public void SelectItem()
     {
-        // Si el visor3D no es nulo, activamos el visor
-        if (visor3D != null)
+        Debug.Log("Ítem seleccionado: " + item.itemsName);
+
+        // Activar RawImage cuando se selecciona el ítem
+        if (InventoryManager.Instance.CanvasRawImage != null)
         {
-            visor3D.ActivarVisor3D();
+            InventoryManager.Instance.ShowRawImage();
+            Debug.Log("RawImage activado");
         }
     }
 }

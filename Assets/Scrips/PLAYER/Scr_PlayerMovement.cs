@@ -1,10 +1,13 @@
 using Cinemachine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Scr_PlayerMovement : MonoBehaviour
 {
     public float MoveSpeed = 5f;
     public float LookSpeed = 2f;
+    public float VerticalLookSpeed = 2f;
     public float Gravity = -9.8f;
 
     float ySpeed;
@@ -16,7 +19,10 @@ public class Scr_PlayerMovement : MonoBehaviour
     CharacterController controller;
     Camera playerCamera;
 
+    // Referencia al script de inventario
     public InventoryManager inventoryManager;
+
+    // Variables para la cámara virtual de Cinemachine
     public CinemachineVirtualCamera virtualCam;
 
     void Start()
@@ -34,35 +40,24 @@ public class Scr_PlayerMovement : MonoBehaviour
             Debug.LogError("Inventory Manager not assigned!");
         }
 
-        // Oculta el cursor al inicio del juego
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        // Asegurar que el cursor está bloqueado al iniciar el juego
+        LockCursor(true);
     }
 
     void Update()
     {
-        if (!inventoryManager.IsInventoryOpen())
+        // Movimiento y rotación solo si el inventario no está abierto
+        if (!inventoryManager.InventoryUI.activeSelf)
         {
             MovePlayer();
             LookAround();
         }
 
+        // Detecta cuando el jugador presiona la tecla E para abrir/cerrar el inventario
         if (Input.GetKeyDown(KeyCode.E))
         {
             inventoryManager.ToggleInventoryUI();
-            bool inventoryIsOpen = inventoryManager.IsInventoryOpen();
-
-            if (inventoryIsOpen)
-            {
-                Cursor.lockState = CursorLockMode.None;  // Si el inventario está abierto, el cursor se desbloquea
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.Locked;  // Si el inventario está cerrado, el cursor se bloquea
-            }
-
-            // Mostrar o esconder el cursor según el estado del inventario
-            Cursor.visible = inventoryIsOpen;
+            LockCursor(!inventoryManager.InventoryUI.activeSelf);
         }
     }
 
@@ -105,5 +100,19 @@ public class Scr_PlayerMovement : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -80f, 80f);
 
         virtualCam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+    }
+
+    void LockCursor(bool isLocked)
+    {
+        if (isLocked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 }
