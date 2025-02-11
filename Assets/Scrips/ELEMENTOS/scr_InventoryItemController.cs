@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class scr_InventoryItemController : MonoBehaviour
 {
-    Item item;
+    public Item item;
  
     private void Start()
     {
@@ -18,7 +18,7 @@ public class scr_InventoryItemController : MonoBehaviour
 
     public void SelectItem()
     {
-        Debug.Log("Ítem seleccionado: " + item.itemsName);
+        //Debug.Log("Ítem seleccionado: " + item.itemsName);
 
         // Activar RawImage cuando se selecciona el ítem
         if (InventoryManager.Instance.CanvasRawImage != null)

@@ -18,6 +18,11 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject CanvasRawImage; //Referencia al RawImage en la UI
 
+    GameObject ObjExpositor;
+    public GameObject Expositor;
+
+    public ScrollRect Scroll;
+
     private void Awake()
     {
         if (Instance == null)
@@ -101,6 +106,22 @@ public class InventoryManager : MonoBehaviour
         if (CanvasRawImage != null)
         {
             CanvasRawImage.SetActive(true);
+            ObjExpositor = Instantiate(Items[0].Objeto3D, Expositor.transform);
+            ObjExpositor.transform.localPosition = Vector3.zero;
+
+            Scroll.enabled = false;
+        }
+    }
+
+    public void DisableRawImage()
+    {
+        if (CanvasRawImage != null)
+        {
+            CanvasRawImage.SetActive(false);
+
+            Destroy(ObjExpositor);
+
+            Scroll.enabled = true;
         }
     }
 }
