@@ -25,6 +25,9 @@ public class Scr_PlayerMovement : MonoBehaviour
     // Variables para la cámara virtual de Cinemachine
     public CinemachineVirtualCamera virtualCam;
 
+    //ObjetoMira
+    public GameObject mira;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -51,13 +54,27 @@ public class Scr_PlayerMovement : MonoBehaviour
         {
             MovePlayer();
             LookAround();
+            mira.SetActive(true);
         }
 
         // Detecta cuando el jugador presiona la tecla E para abrir/cerrar el inventario
         if (Input.GetKeyDown(KeyCode.E))
         {
-            inventoryManager.ToggleInventoryUI();
+            // Verificar si el RawImage está abierto
+            if (inventoryManager.isRawImageOpen)
+            {
+                // Si el RawImage está abierto, primero lo cerramos
+                inventoryManager.DisableRawImage();
+            }
+            else
+            {
+                // Si el RawImage no está abierto, alternamos el inventario
+                inventoryManager.ToggleInventoryUI();
+            }
+
+            // Alternar el bloqueo del cursor y la visibilidad de la mira
             LockCursor(!inventoryManager.InventoryUI.activeSelf);
+            mira.SetActive(!inventoryManager.InventoryUI.activeSelf);
         }
     }
 
@@ -113,6 +130,19 @@ public class Scr_PlayerMovement : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+        }
+    }
+
+    void LockMira(bool isLocked)
+    {
+        if (isLocked)
+        {
+           mira.SetActive(true);
+            
+        }
+        else
+        {
+            mira.SetActive(false);
         }
     }
 }

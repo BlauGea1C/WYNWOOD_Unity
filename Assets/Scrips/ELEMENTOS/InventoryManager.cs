@@ -23,6 +23,8 @@ public class InventoryManager : MonoBehaviour
 
     public ScrollRect Scroll;
 
+    public bool isRawImageOpen;
+
     private void Awake()
     {
         if (Instance == null)
@@ -105,11 +107,13 @@ public class InventoryManager : MonoBehaviour
     {
         if (CanvasRawImage != null)
         {
-            CanvasRawImage.SetActive(true);
-            ObjExpositor = Instantiate(Items[0].Objeto3D, Expositor.transform);
+           CanvasRawImage.SetActive(true);
+            /*ObjExpositor = Instantiate(Items[0].Objeto3D, Expositor.transform);
             ObjExpositor.transform.localPosition = Vector3.zero;
 
             Scroll.enabled = false;
+           */
+            isRawImageOpen = true;
         }
     }
 
@@ -119,9 +123,11 @@ public class InventoryManager : MonoBehaviour
         {
             CanvasRawImage.SetActive(false);
 
-            Destroy(ObjExpositor);
+           /* Destroy(ObjExpositor);
 
-            Scroll.enabled = true;
+            Scroll.enabled = true;*/
+
+            isRawImageOpen = false;
         }
     }
 }
