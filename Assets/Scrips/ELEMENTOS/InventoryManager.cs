@@ -103,16 +103,21 @@ public class InventoryManager : MonoBehaviour
     }
 
     // Método para activar el RawImage al seleccionar un ítem
-    public void ShowRawImage()
+    public void ShowRawImage(Item item)
     {
         if (CanvasRawImage != null)
         {
-           CanvasRawImage.SetActive(true);
-            /*ObjExpositor = Instantiate(Items[0].Objeto3D, Expositor.transform);
+            var NewItemID = item.id;
+
+            int ItemEnLista = Items.FindIndex(i => i.id == item.id);
+
+
+            CanvasRawImage.SetActive(true);
+            ObjExpositor = Instantiate(Items[ItemEnLista].Objeto3D, Expositor.transform);
             ObjExpositor.transform.localPosition = Vector3.zero;
 
             Scroll.enabled = false;
-           */
+           
             isRawImageOpen = true;
         }
     }
@@ -123,9 +128,12 @@ public class InventoryManager : MonoBehaviour
         {
             CanvasRawImage.SetActive(false);
 
-           /* Destroy(ObjExpositor);
+             Scroll.enabled = true;
 
-            Scroll.enabled = true;*/
+            foreach (Transform Objeto in Expositor.transform)
+            {
+                Destroy(Objeto.gameObject);
+            }
 
             isRawImageOpen = false;
         }

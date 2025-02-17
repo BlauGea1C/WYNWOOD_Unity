@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Documentos_muerte_padre_Liam
   m_EditorClassIdentifier: 
   itemsName: Documentos sobre la muerte del padre de Liam
-  ItemIcono: {fileID: 0}
+  ItemIcono: {fileID: 21300000, guid: a46e6fc01a5f9484e8b73d8a2cb57a27, type: 3}
+  Objeto3D: {fileID: 0}

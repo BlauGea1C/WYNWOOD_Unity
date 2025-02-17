@@ -7,6 +7,8 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
     //Informacion que tienen los items
+    public string id;
+
     public string itemsName;
     public Sprite ItemIcono;
     public GameObject Objeto3D;

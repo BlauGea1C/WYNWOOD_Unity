@@ -23,7 +23,7 @@ public class scr_InventoryItemController : MonoBehaviour
         // Activar RawImage cuando se selecciona el ítem
         if (InventoryManager.Instance.CanvasRawImage != null)
         {
-            InventoryManager.Instance.ShowRawImage();
+            InventoryManager.Instance.ShowRawImage(item);
             Debug.Log("RawImage activado");
         }
     }
