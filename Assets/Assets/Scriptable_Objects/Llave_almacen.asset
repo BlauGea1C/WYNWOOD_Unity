@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabfd7aa150adaa438f057ee46c8e81b, type: 3}
   m_Name: Llave_almacen
   m_EditorClassIdentifier: 
+  id: 09
   itemsName: "Llave almac\xE9n"
   ItemIcono: {fileID: 0}
+  Objeto3D: {fileID: 0}

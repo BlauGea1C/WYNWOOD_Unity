@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabfd7aa150adaa438f057ee46c8e81b, type: 3}
   m_Name: Bebidas_en_la_nevera
   m_EditorClassIdentifier: 
+  id: 02
   itemsName: Bebidas en la nevera
   ItemIcono: {fileID: 0}
+  Objeto3D: {fileID: 0}

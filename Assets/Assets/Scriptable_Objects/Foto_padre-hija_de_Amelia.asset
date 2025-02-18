@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabfd7aa150adaa438f057ee46c8e81b, type: 3}
   m_Name: Foto_padre-hija_de_Amelia
   m_EditorClassIdentifier: 
+  id: 08
   itemsName: Foto padre-hija de Amelia
   ItemIcono: {fileID: 0}
+  Objeto3D: {fileID: 0}

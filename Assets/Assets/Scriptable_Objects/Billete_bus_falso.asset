@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabfd7aa150adaa438f057ee46c8e81b, type: 3}
   m_Name: Billete_bus_falso
   m_EditorClassIdentifier: 
+  id: 03
   itemsName: Billete de bus falso
   ItemIcono: {fileID: 0}
+  Objeto3D: {fileID: 0}
