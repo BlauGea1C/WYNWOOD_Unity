@@ -74,8 +74,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -270,9 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f2d66733cf1fe48b961576ed5ae071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemPanel: {fileID: 0}
-  PanelItemImage: {fileID: 0}
-  PanelItemName: {fileID: 0}
+  item: {fileID: 0}
 --- !u!1 &2733575808084272142
 GameObject:
   m_ObjectHideFlags: 0

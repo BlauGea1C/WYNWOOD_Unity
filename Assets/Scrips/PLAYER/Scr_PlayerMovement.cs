@@ -28,6 +28,7 @@ public class Scr_PlayerMovement : MonoBehaviour
     //ObjetoMira
     public GameObject mira;
 
+
     void Start()
     {
         controller = GetComponent<CharacterController>();

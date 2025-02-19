@@ -24,6 +24,8 @@ public class InventoryManager : MonoBehaviour
     public ScrollRect Scroll;
 
     public bool isRawImageOpen;
+    //ObjetoMira
+    public GameObject mo;
 
     private void Awake()
     {
@@ -107,6 +109,8 @@ public class InventoryManager : MonoBehaviour
     {
         if (CanvasRawImage != null)
         {
+            mo.SetActive(false);
+
             var NewItemID = item.id;
 
             int ItemEnLista = Items.FindIndex(i => i.id == item.id);
@@ -126,6 +130,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (CanvasRawImage != null)
         {
+            mo.SetActive(true);
             CanvasRawImage.SetActive(false);
 
              Scroll.enabled = true;
