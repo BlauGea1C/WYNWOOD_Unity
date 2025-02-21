@@ -18,7 +18,7 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject CanvasRawImage; //Referencia al RawImage en la UI
 
-    GameObject ObjExpositor;
+    public GameObject ObjExpositor;
     public GameObject Expositor;
 
     public ScrollRect Scroll;
@@ -26,6 +26,8 @@ public class InventoryManager : MonoBehaviour
     public bool isRawImageOpen;
     //ObjetoMira
     public GameObject mo;
+
+    public LayerMask Viewer3D;
 
     private void Awake()
     {
@@ -118,12 +120,25 @@ public class InventoryManager : MonoBehaviour
 
             CanvasRawImage.SetActive(true);
             ObjExpositor = Instantiate(Items[ItemEnLista].Objeto3D, Expositor.transform);
+
+            ObjExpositor.layer = LayerMask.NameToLayer("CamaraObj3D");
+
+            foreach (Transform Meshes in ObjExpositor.transform)
+            {
+                Meshes.gameObject.layer = LayerMask.NameToLayer("CamaraObj3D");
+            }
+
             ObjExpositor.transform.localPosition = Vector3.zero;
 
             Scroll.enabled = false;
            
             isRawImageOpen = true;
         }
+    }
+
+    private void Update()
+    {
+       
     }
 
     public void DisableRawImage()

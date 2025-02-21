@@ -661,7 +661,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308210215}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2461,10 +2461,14 @@ MonoBehaviour:
   InventoryUI: {fileID: 560549424}
   InventoryItems: []
   CanvasRawImage: {fileID: 674920694}
+  ObjExpositor: {fileID: 0}
   Expositor: {fileID: 308210215}
   Scroll: {fileID: 560549425}
   isRawImageOpen: 0
   mo: {fileID: 895431753}
+  Viewer3D:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &582757339
 Transform:
   m_ObjectHideFlags: 0
@@ -5388,10 +5392,14 @@ MonoBehaviour:
   InventoryUI: {fileID: 0}
   InventoryItems: []
   CanvasRawImage: {fileID: 0}
+  ObjExpositor: {fileID: 0}
   Expositor: {fileID: 0}
   Scroll: {fileID: 0}
   isRawImageOpen: 0
   mo: {fileID: 0}
+  Viewer3D:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &1268663919
 Transform:
   m_ObjectHideFlags: 0
