@@ -28,11 +28,9 @@ public class Scr_Movimiento3D : MonoBehaviour
     }
 }
 */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.UI;
-using static UnityEditor.Progress;
+
 
 public class Scr_Movimiento3D : MonoBehaviour
 {
