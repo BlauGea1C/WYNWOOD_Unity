@@ -28,6 +28,8 @@ public class Scr_PlayerMovement : MonoBehaviour
     //ObjetoMira
     public GameObject mira;
 
+    public GameObject MapaUI;  // UI del inventario
+    public GameObject PlayerUI;
 
     void Start()
     {
@@ -76,6 +78,20 @@ public class Scr_PlayerMovement : MonoBehaviour
             // Alternar el bloqueo del cursor y la visibilidad de la mira
             LockCursor(!inventoryManager.InventoryUI.activeSelf);
             mira.SetActive(!inventoryManager.InventoryUI.activeSelf);
+        }
+
+        // Detecta cuando el jugador presiona la tecla M para abrir/cerrar el inventario
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (MapaUI != null)
+            {
+                MapaUI.SetActive(!MapaUI.activeSelf);
+            }
+
+            // Alternar el bloqueo del cursor y la visibilidad de la mira
+            LockCursor(!MapaUI.activeSelf);
+            mira.SetActive(!MapaUI.activeSelf);
+            PlayerUI.SetActive(!MapaUI.activeSelf);
         }
     }
 
