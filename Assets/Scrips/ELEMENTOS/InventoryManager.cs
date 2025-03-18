@@ -34,11 +34,13 @@ public class InventoryManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-           
+            DontDestroyOnLoad(gameObject); // Esto evita que el objeto de inventario se destruya al cargar una nueva escena
+            Debug.Log("InventoryManager creado y persistente entre escenas.");
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // Destruye cualquier duplicado del InventoryManager
+            Debug.Log("Se destruyó un duplicado del InventoryManager.");
         }
     }
 
@@ -117,7 +119,6 @@ public class InventoryManager : MonoBehaviour
 
             int ItemEnLista = Items.FindIndex(i => i.id == item.id);
 
-
             CanvasRawImage.SetActive(true);
             ObjExpositor = Instantiate(Items[ItemEnLista].Objeto3D, Expositor.transform);
 
@@ -131,14 +132,14 @@ public class InventoryManager : MonoBehaviour
             ObjExpositor.transform.localPosition = Vector3.zero;
 
             Scroll.enabled = false;
-           
+
             isRawImageOpen = true;
         }
     }
 
     private void Update()
     {
-       
+
     }
 
     public void DisableRawImage()
@@ -148,7 +149,7 @@ public class InventoryManager : MonoBehaviour
             mo.SetActive(true);
             CanvasRawImage.SetActive(false);
 
-             Scroll.enabled = true;
+            Scroll.enabled = true;
 
             foreach (Transform Objeto in Expositor.transform)
             {

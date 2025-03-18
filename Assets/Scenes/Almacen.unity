@@ -345,7 +345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &21681887
 Transform:
   m_ObjectHideFlags: 0
@@ -2838,6 +2838,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c0babbf9d9e194b80aefa6d4e5a3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &963320984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 963320985}
+  - component: {fileID: 963320986}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &963320985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963320984}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -953.23004, y: -537.13995, z: -17.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1489106227}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963320986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963320984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70771ed28056d70459440fbb2ba7913c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Items: []
+  ItemContent: {fileID: 219722598}
+  InventoryItem: {fileID: 1292778701157938717, guid: fe974f585536e2c46b61125db4ad9ab4,
+    type: 3}
+  InventoryUI: {fileID: 1359961009}
+  InventoryItems: []
+  CanvasRawImage: {fileID: 1492578065}
+  ObjExpositor: {fileID: 0}
+  Expositor: {fileID: 1787862503}
+  Scroll: {fileID: 1359961011}
+  isRawImageOpen: 0
+  mo: {fileID: 106218831}
+  Viewer3D:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &967984781
 GameObject:
   m_ObjectHideFlags: 0
@@ -3344,7 +3403,7 @@ MonoBehaviour:
   LookSpeed: 2
   VerticalLookSpeed: 2
   Gravity: -9.8
-  inventoryManager: {fileID: 1879496025}
+  inventoryManager: {fileID: 963320986}
   virtualCam: {fileID: 519543282}
   mira: {fileID: 440717642}
   MapaUI: {fileID: 486842755}
@@ -4613,7 +4672,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1941498408}
-  - {fileID: 1879496024}
+  - {fileID: 963320985}
   - {fileID: 953010865}
   - {fileID: 1359961010}
   - {fileID: 486842760}
@@ -5814,65 +5873,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 617557792}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1879496023
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1879496024}
-  - component: {fileID: 1879496025}
-  m_Layer: 0
-  m_Name: InventoryManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1879496024
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1879496023}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -953.23004, y: -537.14, z: -17.19}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1489106227}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1879496025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1879496023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70771ed28056d70459440fbb2ba7913c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Items: []
-  ItemContent: {fileID: 219722598}
-  InventoryItem: {fileID: 1292778701157938717, guid: fe974f585536e2c46b61125db4ad9ab4,
-    type: 3}
-  InventoryUI: {fileID: 1359961009}
-  InventoryItems: []
-  CanvasRawImage: {fileID: 1492578065}
-  ObjExpositor: {fileID: 0}
-  Expositor: {fileID: 1787862503}
-  Scroll: {fileID: 1359961011}
-  isRawImageOpen: 0
-  mo: {fileID: 106218831}
-  Viewer3D:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!1 &1941498407
 GameObject:
   m_ObjectHideFlags: 0
@@ -6345,7 +6345,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1879496025}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
         m_MethodName: DisableRawImage
         m_Mode: 1
