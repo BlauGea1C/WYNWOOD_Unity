@@ -6,6 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: b5c4ec7b372089d49832f82e0bfe5cd9
+  - enabled: 1
+    path: Assets/Scenes/Habitacion.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Almacen.unity
+    guid: 3da542c1c189fc3458244855bbe1088f
+  - enabled: 1
+    path: Assets/Scenes/Cafeteria.unity
+    guid: b05b4da512b55e14a95d08ed44c95223
+  - enabled: 1
+    path: Assets/Scenes/Desp_Amiga.unity
+    guid: 8b2d12a5c49043944b8ef9b250bfae18
+  - enabled: 1
+    path: Assets/Scenes/Desp_Comisaria.unity
+    guid: d688b4c52cef2534183197ac732a2416
+  - enabled: 1
+    path: Assets/Scenes/Pasillo.unity
+    guid: 0db6ad7c91e281e49828c9859ba4ac74
+  - enabled: 1
+    path: Assets/Scenes/ManuFinal.unity
+    guid: ef8223e6c6ed16c44a7cf6127ea6d745
   m_configObjects: {}

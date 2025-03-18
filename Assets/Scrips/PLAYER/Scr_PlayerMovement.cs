@@ -29,7 +29,7 @@ public class Scr_PlayerMovement : MonoBehaviour
     public GameObject mira;
 
     public GameObject MapaUI;  // UI del inventario
-    public GameObject PlayerUI;
+   
 
     void Start()
     {
@@ -91,7 +91,7 @@ public class Scr_PlayerMovement : MonoBehaviour
             // Alternar el bloqueo del cursor y la visibilidad de la mira
             LockCursor(!MapaUI.activeSelf);
             mira.SetActive(!MapaUI.activeSelf);
-            PlayerUI.SetActive(!MapaUI.activeSelf);
+           
         }
     }
 
