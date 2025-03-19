@@ -1839,7 +1839,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 582757338}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
         m_MethodName: DisableRawImage
         m_Mode: 1
@@ -2476,65 +2476,6 @@ RectTransform:
   m_AnchoredPosition: {x: 4, y: 31}
   m_SizeDelta: {x: 1805, y: 748}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &582757337
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 582757339}
-  - component: {fileID: 582757338}
-  m_Layer: 0
-  m_Name: InventoryManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &582757338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582757337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70771ed28056d70459440fbb2ba7913c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Items: []
-  ItemContent: {fileID: 1019383438}
-  InventoryItem: {fileID: 1292778701157938717, guid: fe974f585536e2c46b61125db4ad9ab4,
-    type: 3}
-  InventoryUI: {fileID: 560549424}
-  InventoryItems: []
-  CanvasRawImage: {fileID: 674920694}
-  ObjExpositor: {fileID: 0}
-  Expositor: {fileID: 308210215}
-  Scroll: {fileID: 560549425}
-  isRawImageOpen: 0
-  mo: {fileID: 895431753}
-  Viewer3D:
-    serializedVersion: 2
-    m_Bits: 64
---- !u!4 &582757339
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582757337}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -953.23004, y: -537.14, z: -17.19}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1435792514}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &594092200
 GameObject:
   m_ObjectHideFlags: 0
@@ -6185,7 +6126,7 @@ MonoBehaviour:
   LookSpeed: 2
   VerticalLookSpeed: 2
   Gravity: -9.8
-  inventoryManager: {fileID: 582757338}
+  inventoryManager: {fileID: 0}
   virtualCam: {fileID: 1296258711}
   mira: {fileID: 388631784}
   MapaUI: {fileID: 557670043}
@@ -6445,7 +6386,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 89.2
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -6587,7 +6528,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1341495017}
-  - {fileID: 582757339}
   - {fileID: 1623983149}
   - {fileID: 560549428}
   - {fileID: 557670044}

@@ -8,30 +8,28 @@ public class SCR_ItemPickup : MonoBehaviour
 
     private void Update()
     {
-        // Verifica si se ha hecho clic con el botón izquierdo del ratón
         if (Input.GetMouseButtonDown(0))
         {
-            // Obtén el centro de la pantalla
             Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, 0f);
-
-            // Crea un rayo desde la cámara utilizando el centro de la pantalla
             Ray ray = Camera.main.ScreenPointToRay(screenCenter);
             RaycastHit hit;
 
-            // Si el rayo impacta algún objeto
             if (Physics.Raycast(ray, out hit))
             {
-                // Comprueba si el objeto golpeado es este mismo objeto de recogida
                 if (hit.transform == transform)
                 {
-                    // Llama al método para recoger el ítem y agregarlo al inventario
-                    InventoryManager.Instance.OnItemPicked(item);
-
-                    // Destruye el objeto recogido de la escena
-                    Destroy(gameObject);
+                    // Verifica si el ID del ítem es válido antes de agregarlo al inventario
+                    if (!string.IsNullOrEmpty(item.id))
+                    {
+                        InventoryManager.Instance.OnItemPicked(item);
+                        Destroy(gameObject);
+                    }
+                    else
+                    {
+                        Debug.LogError("El ítem no tiene un ID asignado.");
+                    }
                 }
             }
         }
     }
 }
-

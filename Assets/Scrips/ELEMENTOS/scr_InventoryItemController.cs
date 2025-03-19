@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class scr_InventoryItemController : MonoBehaviour
 {
     public Item item;
- 
+
     private void Start()
     {
         // Agrega un evento al botón del objeto en el inventario
@@ -18,8 +18,6 @@ public class scr_InventoryItemController : MonoBehaviour
 
     public void SelectItem()
     {
-        //Debug.Log("Ítem seleccionado: " + item.itemsName);
-
         // Activar RawImage cuando se selecciona el ítem
         if (InventoryManager.Instance.CanvasRawImage != null)
         {

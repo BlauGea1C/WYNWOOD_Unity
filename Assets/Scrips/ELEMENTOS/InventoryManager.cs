@@ -24,7 +24,7 @@ public class InventoryManager : MonoBehaviour
     public ScrollRect Scroll;
 
     public bool isRawImageOpen;
-    //ObjetoMira
+    // ObjetoMira
     public GameObject mo;
 
     public LayerMask Viewer3D;
@@ -158,5 +158,29 @@ public class InventoryManager : MonoBehaviour
 
             isRawImageOpen = false;
         }
+    }
+
+    // Método para cargar los ítems al cambiar de escena
+    public void LoadInventory(List<string> itemIDs)
+    {
+        foreach (string id in itemIDs)
+        {
+            Item item = ItemDatabase.Instance.GetItemByID(id);
+            if (item != null)
+            {
+                Add(item);
+            }
+        }
+    }
+
+    // Método para guardar los ítems en la escena actual
+    public List<string> SaveInventory()
+    {
+        List<string> itemIDs = new List<string>();
+        foreach (Item item in Items)
+        {
+            itemIDs.Add(item.id);
+        }
+        return itemIDs;
     }
 }
