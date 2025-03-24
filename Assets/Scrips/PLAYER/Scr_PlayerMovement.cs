@@ -401,6 +401,8 @@ public class Scr_PlayerMovement : MonoBehaviour
             mira.SetActive(true);
         }
 
+     
+
         // Detecta cuando el jugador presiona la tecla E para abrir/cerrar el inventario
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -423,6 +425,7 @@ public class Scr_PlayerMovement : MonoBehaviour
             if (MapaUI != null)
             {
                 MapaUI.SetActive(!MapaUI.activeSelf);
+                
             }
 
             LockCursor(!MapaUI.activeSelf);
