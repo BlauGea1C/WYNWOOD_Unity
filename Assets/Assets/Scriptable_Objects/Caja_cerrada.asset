@@ -16,3 +16,4 @@ MonoBehaviour:
   itemsName: Caja cerrada
   ItemIcono: {fileID: 21300000, guid: 55e108e883530b44b8885270dc219ebe, type: 3}
   Objeto3D: {fileID: 919132149155446097, guid: 392f754b2d5de7f46a108e73b22975b9, type: 3}
+  loc: 4

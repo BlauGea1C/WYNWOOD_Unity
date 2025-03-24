@@ -11,4 +11,5 @@ public class Item : ScriptableObject
     public string itemsName;
     public Sprite ItemIcono;
     public GameObject Objeto3D;
+    public string loc; // Orden Botones
 }
