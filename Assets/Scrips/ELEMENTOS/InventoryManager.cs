@@ -123,6 +123,32 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+     // Verifica si el jugador tiene la llave para destruir la puerta
+    public bool HasKeyForDoor(Item doorItem)
+    {
+        foreach (var item in Items)
+        {
+            if (item.Llave && item.OrdenLlaves == 1) // La llave con OrdenLlaves = 1 es la de la puerta
+            {
+                return true; // Se tiene la llave para destruir la puerta
+            }
+        }
+        return false;
+    }
+
+    // Verifica si el jugador tiene una llave para mostrar el Canvas
+    public bool HasKeyForCanvas(Item doorItem)
+    {
+        foreach (var item in Items)
+        {
+            if (item.Llave && item.OrdenLlaves != 1) // Llaves con OrdenLlaves != 1 son para mostrar Canvas
+            {
+                return true; // Se tiene una llave para mostrar el Canvas
+            }
+        }
+        return false;
+    }
+
     public void OnItemPicked(Item item)
     {
         Add(item);
@@ -166,4 +192,7 @@ public class InventoryManager : MonoBehaviour
             isRawImageOpen = false;
         }
     }
+
+
+
 }

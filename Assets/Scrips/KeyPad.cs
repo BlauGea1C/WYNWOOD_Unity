@@ -55,4 +55,6 @@ public class KeyPad : MonoBehaviour
         Ans.text = ""; // Borra el texto
     }
 
+
+
 }

@@ -7,9 +7,14 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
     // Información que tienen los ítems
-    public string id; // ID único para cada ítem
-    public string itemsName;
-    public Sprite ItemIcono;
-    public GameObject Objeto3D;
-    public string loc; // Orden Botones
+     public string id; // ID único para cada ítem
+     public string itemsName;
+     public Sprite ItemIcono;
+     public GameObject Objeto3D;
+     public string loc; // Orden Botones
+     public bool Llave = false; // Si es una llave   
+     public int OrdenLlaves;// 1 para la puerta, 2 y 3 para los Canvas 
+
+  
 }
+    

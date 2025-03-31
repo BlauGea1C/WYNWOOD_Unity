@@ -91,19 +91,6 @@ public class Scr_PlayerMovement : MonoBehaviour
             LockCursor(!MapaUI.activeSelf);
             mira.SetActive(!MapaUI.activeSelf);
         }
-
-        // Detecta cuando el jugador presiona la tecla M para abrir/cerrar el mapa
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (KeyPadUI != null)
-            {
-                KeyPadUI.SetActive(!KeyPadUI.activeSelf);
-
-            }
-
-            LockCursor(!KeyPadUI.activeSelf);
-            mira.SetActive(!KeyPadUI.activeSelf);
-        }
     }
 
     void MovePlayer()
