@@ -13,8 +13,9 @@ public class Item : ScriptableObject
      public GameObject Objeto3D;
      public string loc; // Orden Botones
      public bool Llave = false; // Si es una llave   
-     public int OrdenLlaves;// 1 para la puerta, 2 y 3 para los Canvas 
+     public bool LlavesPuerta = false;
+     public bool LlavesCaja = false;
 
-  
+
 }
     

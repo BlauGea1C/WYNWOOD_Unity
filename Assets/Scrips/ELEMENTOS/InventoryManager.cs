@@ -123,32 +123,68 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-     // Verifica si el jugador tiene la llave para destruir la puerta
+
+    /*// Verifica si el jugador tiene la llave para destruir la puerta y la elimina si la usa
     public bool HasKeyForDoor(Item doorItem)
     {
-        foreach (var item in Items)
+        for (int i = 0; i < Items.Count; i++)
         {
-            if (item.Llave && item.OrdenLlaves == 1) // La llave con OrdenLlaves = 1 es la de la puerta
+            if (Items[i].Llave && Items[i].LlavesPuerta)
             {
-                return true; // Se tiene la llave para destruir la puerta
+                Items.RemoveAt(i); // Eliminar la llave del inventario
+                ListItems(); // Actualizar la UI del inventario
+                return true; // Se encontró y eliminó la llave
             }
         }
         return false;
     }
 
-    // Verifica si el jugador tiene una llave para mostrar el Canvas
-    public bool HasKeyForCanvas(Item doorItem)
+    // Verifica si el jugador tiene la llave para caja/diario y la elimina si la usa
+    public bool HasKeyForBox(Item boxItem)
     {
-        foreach (var item in Items)
+        for (int i = 0; i < Items.Count; i++)
         {
-            if (item.Llave && item.OrdenLlaves != 1) // Llaves con OrdenLlaves != 1 son para mostrar Canvas
+            if (Items[i].Llave && Items[i].LlavesCaja)
             {
-                return true; // Se tiene una llave para mostrar el Canvas
+                Items.RemoveAt(i); // Eliminar la llave del inventario
+                ListItems(); // Actualizar la UI del inventario
+                return true; // Se encontró y eliminó la llave
             }
         }
         return false;
+    }*/
+
+    // Verifica si el jugador tiene la llave para destruir la puerta y la elimina si la usa
+    public bool HasKeyForDoor(Item doorItem)
+    {
+        for (int i = 0; i < Items.Count; i++)
+        {
+            if (Items[i].Llave && Items[i].LlavesPuerta)
+            {
+                Items.RemoveAt(i); // Eliminar la llave del inventario
+                ListItems(); // Actualizar la UI del inventario
+                return true; // Se encontró y eliminó la llave
+            }
+        }
+        DialogManager.Instance.ShowMessage("Necesitas una llave para abrir esta puerta.");
+        return false;
     }
 
+    // Verifica si el jugador tiene la llave para caja/diario y la elimina si la usa
+    public bool HasKeyForBox(Item boxItem)
+    {
+        for (int i = 0; i < Items.Count; i++)
+        {
+            if (Items[i].Llave && Items[i].LlavesCaja)
+            {
+                Items.RemoveAt(i); // Eliminar la llave del inventario
+                ListItems(); // Actualizar la UI del inventario
+                return true; // Se encontró y eliminó la llave
+            }
+        }
+        DialogManager.Instance.ShowMessage("Esta caja está cerrada. Necesitas una llave.");
+        return false;
+    }
     public void OnItemPicked(Item item)
     {
         Add(item);

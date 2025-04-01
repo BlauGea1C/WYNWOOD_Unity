@@ -16,3 +16,7 @@ MonoBehaviour:
   itemsName: Llave caja
   ItemIcono: {fileID: 0}
   Objeto3D: {fileID: 0}
+  loc: 
+  Llave: 1
+  LlavesPuerta: 0
+  LlavesCaja: 1

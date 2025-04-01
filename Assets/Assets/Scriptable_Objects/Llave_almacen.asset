@@ -16,3 +16,7 @@ MonoBehaviour:
   itemsName: "Llave almac\xE9n"
   ItemIcono: {fileID: 0}
   Objeto3D: {fileID: 0}
+  loc: 
+  Llave: 1
+  LlavesPuerta: 1
+  LlavesCaja: 0
