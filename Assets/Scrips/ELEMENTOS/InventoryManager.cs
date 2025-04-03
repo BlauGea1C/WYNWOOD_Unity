@@ -84,6 +84,12 @@ public class InventoryManager : MonoBehaviour
         ListItems(); // Actualizar la UI
     }
 
+    public void AddFromCanvas(Item item, GameObject canvas)
+    {
+        Add(item);
+       
+    }
+
     public void ListItems()
     {
         foreach (Transform item in ItemContent)

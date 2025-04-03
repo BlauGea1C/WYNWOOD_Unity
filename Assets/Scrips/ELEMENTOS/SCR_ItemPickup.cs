@@ -36,11 +36,26 @@ public class SCR_ItemPickup : MonoBehaviour
                             Debug.LogError("El ítem no tiene un ID asignado.");
                         }
                     }
-                    else if (isCandadoItem) // Si es un objeto que activa un Canvas
+                    /* else if (isCandadoItem) // Si es un objeto que activa un Canvas
+                     {
+                         if (canvasToActivate != null)
+                         {
+                             canvasToActivate.SetActive(true);
+                         }
+                         else
+                         {
+                             Debug.LogError("No se ha asignado un Canvas para activar.");
+                         }
+                     }*/
+                    else if (isCandadoItem) // Si el objeto activa un Canvas con opciones
                     {
                         if (canvasToActivate != null)
                         {
-                            canvasToActivate.SetActive(true);
+                            canvasToActivate.SetActive(true); // Activa el Canvas con los botones de ítems
+                            
+                            // Muestra el cursor y libera la restricción de movimiento
+                            Cursor.visible = true; // Hacer visible el cursor
+                            Cursor.lockState = CursorLockMode.None; // Desbloquear el cursor para que pueda moverse libremente
                         }
                         else
                         {
