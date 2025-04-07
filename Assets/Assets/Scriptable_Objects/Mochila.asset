@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 13
   itemsName: Mochila
-  ItemIcono: {fileID: 0}
+  ItemIcono: {fileID: 21300000, guid: e3cf32436f9e8b64db4f4f069769daab, type: 3}
   Objeto3D: {fileID: 0}
+  loc: 
+  Llave: 0
+  LlavesPuerta: 0
+  LlavesCaja: 0

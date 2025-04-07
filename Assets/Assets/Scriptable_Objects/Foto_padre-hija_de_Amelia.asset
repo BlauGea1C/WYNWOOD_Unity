@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 08
   itemsName: Foto padre-hija de Amelia
-  ItemIcono: {fileID: 0}
+  ItemIcono: {fileID: 21300000, guid: 6df28cb078f2fca46939ce493bcbaf57, type: 3}
   Objeto3D: {fileID: 0}
+  loc: 
+  Llave: 0
+  LlavesPuerta: 0
+  LlavesCaja: 0

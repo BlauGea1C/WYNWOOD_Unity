@@ -4,22 +4,34 @@ using TMPro;
 
 public class InventoryButton : MonoBehaviour
 {
+    public GameObject panelToClose; // El panel o canvas que se va a cerrar
     public Item item;  // El ítem que el botón representa
 
     // Método que se llama cuando el jugador hace clic en el botón
     public void OnButtonClicked()
     {
-        // Llama al InventoryManager para agregar el ítem al inventario
-        InventoryManager.Instance.Add(item);
-
-        // Desactiva el Canvas (puedes también eliminar los botones si es necesario)
-        GameObject canvasToDeactivate = this.transform.parent.gameObject; // El canvas que contiene el botón
-        if (canvasToDeactivate != null)
+        // Verifica si el InventoryManager está disponible y agrega el ítem
+        if (InventoryManager.Instance != null)
         {
-            canvasToDeactivate.SetActive(false);
+            InventoryManager.Instance.Add(item);
+        }
+        else
+        {
+            Debug.LogWarning("InventoryManager no está presente en la escena.");
         }
 
-        // Opcional: Destruir el botón específico (si no quieres que quede en el canvas)
+        // Destruye solo este botón (no el canvas entero)
         Destroy(this.gameObject);
+
+        
+    }
+
+    // Método para cerrar el canvas manualmente (por ejemplo, al pulsar una "X")
+    public void OnCloseButtonClicked()
+    {
+        if (panelToClose != null)
+        {
+            panelToClose.SetActive(false);
+        }
     }
 }

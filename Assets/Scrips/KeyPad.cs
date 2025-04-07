@@ -11,11 +11,18 @@ public class KeyPad : MonoBehaviour
 
     private string contra = "1234";
     private float resetTime = 2f;  // Tiempo en segundos antes de limpiar el texto
+    public GameObject panelToClose; // El panel o canvas que se va a cerrar
 
     public GameObject TaquillaUI;
 
     // Referencia al script de inventario
-  //  public Scr_PlayerMovement Player;
+    //  public Scr_PlayerMovement Player;
+
+    // Reiniciar el texto cada vez que se activa el panel del KeyPad
+    void OnEnable()
+    {
+        Ans.text = "";
+    }
 
     public void Number(int number)
     {
@@ -55,6 +62,13 @@ public class KeyPad : MonoBehaviour
         Ans.text = ""; // Borra el texto
     }
 
-
+    // Método para cerrar el canvas manualmente (por ejemplo, al pulsar una "X")
+    public void OnCloseButtonClicked()
+    {
+        if (panelToClose != null)
+        {
+            panelToClose.SetActive(false);
+        }
+    }
 
 }

@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 02
   itemsName: Bebidas en la nevera
-  ItemIcono: {fileID: 0}
+  ItemIcono: {fileID: 21300000, guid: 984f17df5a4c517409bbdc993600c9af, type: 3}
   Objeto3D: {fileID: 0}
+  loc: 
+  Llave: 0
+  LlavesPuerta: 0
+  LlavesCaja: 0

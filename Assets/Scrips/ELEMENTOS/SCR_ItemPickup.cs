@@ -5,10 +5,10 @@ using UnityEngine;
 public class SCR_ItemPickup : MonoBehaviour
 {
  
-    public bool isPickupItem = true; // Si es true, se recoge; si es false, activa un Canvas.
-    public bool isCandadoItem = false; // Si es true, se recoge; si es false, activa un Canvas.
-    public bool isPuertaItem = false; // Si es true, se recoge; si es false, activa un Canvas.
-    public bool isCajaDiaro = false; // Si es true, se recoge; si es false, activa un Canvas.
+    public bool isPickupItem = true; 
+    public bool isCandadoItem = false; 
+    public bool isPuertaItem = false; 
+    public bool isCajaDiaro = false; 
     public Item item; // Solo si es un objeto recogible.
     public GameObject canvasToActivate; // Solo si es un objeto que activa un Canvas.
 
@@ -36,26 +36,11 @@ public class SCR_ItemPickup : MonoBehaviour
                             Debug.LogError("El ítem no tiene un ID asignado.");
                         }
                     }
-                    /* else if (isCandadoItem) // Si es un objeto que activa un Canvas
-                     {
-                         if (canvasToActivate != null)
-                         {
-                             canvasToActivate.SetActive(true);
-                         }
-                         else
-                         {
-                             Debug.LogError("No se ha asignado un Canvas para activar.");
-                         }
-                     }*/
                     else if (isCandadoItem) // Si el objeto activa un Canvas con opciones
                     {
                         if (canvasToActivate != null)
                         {
-                            canvasToActivate.SetActive(true); // Activa el Canvas con los botones de ítems
-                            
-                            // Muestra el cursor y libera la restricción de movimiento
-                            Cursor.visible = true; // Hacer visible el cursor
-                            Cursor.lockState = CursorLockMode.None; // Desbloquear el cursor para que pueda moverse libremente
+                            canvasToActivate.SetActive(true); 
                         }
                         else
                         {
