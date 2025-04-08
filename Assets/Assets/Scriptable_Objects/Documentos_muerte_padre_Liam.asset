@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 06
   itemsName: 'Documentos Forenses '
-  ItemIcono: {fileID: 21300000, guid: 8fbb08694b701c14bbdcbe2d8d1411d0, type: 3}
+  ItemIcono: {fileID: 0}
   Objeto3D: {fileID: 919132149155446097, guid: 2ea2139959881a54ba426ee1dedc15ae, type: 3}
   loc: 
   Llave: 0
