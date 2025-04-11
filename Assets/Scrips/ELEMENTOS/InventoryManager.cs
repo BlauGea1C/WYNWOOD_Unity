@@ -130,37 +130,6 @@ public class InventoryManager : MonoBehaviour
     }
 
 
-    /*// Verifica si el jugador tiene la llave para destruir la puerta y la elimina si la usa
-    public bool HasKeyForDoor(Item doorItem)
-    {
-        for (int i = 0; i < Items.Count; i++)
-        {
-            if (Items[i].Llave && Items[i].LlavesPuerta)
-            {
-                Items.RemoveAt(i); // Eliminar la llave del inventario
-                ListItems(); // Actualizar la UI del inventario
-                return true; // Se encontró y eliminó la llave
-            }
-        }
-        return false;
-    }
-
-    // Verifica si el jugador tiene la llave para caja/diario y la elimina si la usa
-    public bool HasKeyForBox(Item boxItem)
-    {
-        for (int i = 0; i < Items.Count; i++)
-        {
-            if (Items[i].Llave && Items[i].LlavesCaja)
-            {
-                Items.RemoveAt(i); // Eliminar la llave del inventario
-                ListItems(); // Actualizar la UI del inventario
-                return true; // Se encontró y eliminó la llave
-            }
-        }
-        return false;
-    }*/
-
-    // Verifica si el jugador tiene la llave para destruir la puerta y la elimina si la usa
     public bool HasKeyForDoor(Item doorItem)
     {
         for (int i = 0; i < Items.Count; i++)
