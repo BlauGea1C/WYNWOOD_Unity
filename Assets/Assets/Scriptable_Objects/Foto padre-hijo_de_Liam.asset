@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Foto padre-hijo_de_Liam
   m_EditorClassIdentifier: 
   id: 07
-  itemsName: Foto padre-hijo de Liam
-  ItemIcono: {fileID: 0}
+  itemsName: Foto padre Liam
+  ItemIcono: {fileID: 21300000, guid: 182ed8921017dcd4b88c05d1cdeed358, type: 3}
   Objeto3D: {fileID: 0}
+  loc: 
+  Llave: 0
+  LlavesPuerta: 0
+  LlavesCaja: 0
