@@ -30,7 +30,7 @@ public class Scr_PlayerMovement : MonoBehaviour
 
     public GameObject MapaUI; // UI del mapa
 
-    //public GameObject KeyPadUI; // UI del mapa
+    public GameObject PausaMenu; 
 
     void Start()
     {
@@ -95,14 +95,14 @@ public class Scr_PlayerMovement : MonoBehaviour
         // Detecta cuando el jugador presiona la tecla M para abrir/cerrar el mapa
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if (MapaUI != null)
+            if (PausaMenu != null)
             {
-                MapaUI.SetActive(!MapaUI.activeSelf);
+                PausaMenu.SetActive(!PausaMenu.activeSelf);
 
             }
 
-            LockCursor(!MapaUI.activeSelf);
-            mira.SetActive(!MapaUI.activeSelf);
+            LockCursor(!PausaMenu.activeSelf);
+            mira.SetActive(!PausaMenu.activeSelf);
         }
     }
 

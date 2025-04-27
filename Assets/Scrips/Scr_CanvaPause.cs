@@ -5,31 +5,37 @@ using UnityEngine.SceneManagement;
 
 public class Scr_CanvaPause : MonoBehaviour
 {
-    [SerializeField] private GameObject botonPausa;
+  
     [SerializeField] private GameObject menuPausa;
-    public void Pausa()
+
+    private void Update()
     {
-        Time.timeScale = 0f;
-        botonPausa.SetActive(false);
-        menuPausa.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (menuPausa.activeSelf)
+            {
+                // Si el menú está activo, desactivar y reanudar el juego
+                menuPausa.SetActive(false);
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                // Si el menú está desactivado, activar y pausar el juego
+                menuPausa.SetActive(true);
+                Time.timeScale = 0f;
+            }
+        }
     }
-    public void start()
+
+    public void ChangeSceneRestart(int sceneIndex)
     {
         Time.timeScale = 1f;
-        botonPausa.SetActive(true);
-        menuPausa.SetActive(false);
-
+        SceneManager.LoadScene(sceneIndex);
     }
 
-    public void ChangeSceneRestart(int Scene)
+    public void ChangeSceneExit(int sceneIndex)
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(Scene);
-    }
-
-    public void ChangeSceneExit(int Scene)
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(Scene);
+        SceneManager.LoadScene(sceneIndex);
     }
 }
