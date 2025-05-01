@@ -165,7 +165,7 @@ public class InventoryManager : MonoBehaviour
         Add(item);
     }
 
-    public void ShowRawImage(Item item)
+    /*public void ShowRawImage(Item item)
     {
         if (CanvasRawImage != null)
         {
@@ -182,6 +182,38 @@ public class InventoryManager : MonoBehaviour
             }
 
             ObjExpositor.transform.localPosition = Vector3.zero;
+            Scroll.enabled = false;
+            isRawImageOpen = true;
+        }
+    }*/
+
+    public void ShowRawImage(Item item)
+    {
+        if (CanvasRawImage != null)
+        {
+            mo.SetActive(false);
+            var NewItemID = item.id;
+            int ItemEnLista = Items.FindIndex(i => i.id == item.id);
+
+            // Activar visor
+            CanvasRawImage.SetActive(true);
+
+            // Instanciar objeto y colocarlo en el expositor
+            ObjExpositor = Instantiate(Items[ItemEnLista].Objeto3D, Expositor.transform);
+            ObjExpositor.layer = LayerMask.NameToLayer("CamaraObj3D");
+
+            // Asegurar que todas las partes del objeto tengan la capa correcta
+            foreach (Transform Meshes in ObjExpositor.transform)
+            {
+                Meshes.gameObject.layer = LayerMask.NameToLayer("CamaraObj3D");
+            }
+
+            // Alinear posición al centro del expositor
+            ObjExpositor.transform.localPosition = Vector3.zero;
+
+            // Enviar el objeto al rotador
+            FindObjectOfType<Scr_Movimiento3D>().SetObjectToRotate(ObjExpositor);
+
             Scroll.enabled = false;
             isRawImageOpen = true;
         }

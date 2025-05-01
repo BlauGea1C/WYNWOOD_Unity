@@ -66,42 +66,38 @@ using UnityEngine;
 
 public class Scr_Movimiento3D : MonoBehaviour
 {
-    public float rotationSpeed = 5f;  // Velocidad de rotación
-    private Vector3 lastMousePosition;  // Última posición del mouse
+    public float rotationSpeed = 100f;
+    private Vector3 lastMousePosition;
 
-    public GameObject ObjView; // Objeto que se rota (el objeto que contiene el modelo 3D)
-    private Transform objetoARotar;
+    private Transform[] allParts;
+    private GameObject currentObj;
 
-    void Start()
+    public void SetObjectToRotate(GameObject newObj)
     {
-        // Buscar el mesh dentro de ObjView si está anidado
-        if (ObjView.transform.childCount > 0)
-        {
-            objetoARotar = ObjView.transform.GetChild(0); // Rota el primer hijo
-        }
-        else
-        {
-            objetoARotar = ObjView.transform; // Si no tiene hijos, rota el mismo objeto
-        }
+        currentObj = newObj;
+        allParts = currentObj.GetComponentsInChildren<Transform>();
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Detecta clic inicial
+        if (currentObj == null)
+            return;
+
+        if (Input.GetMouseButtonDown(0))
         {
             lastMousePosition = Input.mousePosition;
         }
 
-        if (Input.GetMouseButton(0)) // Mientras se mantenga el clic
+        if (Input.GetMouseButton(0))
         {
             Vector3 delta = Input.mousePosition - lastMousePosition;
             float rotX = delta.y * rotationSpeed * Time.deltaTime;
             float rotY = -delta.x * rotationSpeed * Time.deltaTime;
 
-            if (objetoARotar != null)
+            foreach (Transform part in allParts)
             {
-                objetoARotar.Rotate(Vector3.right, rotX, Space.World);
-                objetoARotar.Rotate(Vector3.up, rotY, Space.World);
+                part.Rotate(Vector3.right, rotX, Space.World);
+                part.Rotate(Vector3.up, rotY, Space.World);
             }
 
             lastMousePosition = Input.mousePosition;
