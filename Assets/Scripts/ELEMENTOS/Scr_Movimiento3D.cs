@@ -29,7 +29,7 @@ public class Scr_Movimiento3D : MonoBehaviour
 }
 */
 
-using UnityEngine;
+/*using UnityEngine;
 
 
 public class Scr_Movimiento3D : MonoBehaviour
@@ -60,5 +60,51 @@ public class Scr_Movimiento3D : MonoBehaviour
         }
     }
 }
+*/
 
+using UnityEngine;
 
+public class Scr_Movimiento3D : MonoBehaviour
+{
+    public float rotationSpeed = 5f;  // Velocidad de rotación
+    private Vector3 lastMousePosition;  // Última posición del mouse
+
+    public GameObject ObjView; // Objeto que se rota (el objeto que contiene el modelo 3D)
+    private Transform objetoARotar;
+
+    void Start()
+    {
+        // Buscar el mesh dentro de ObjView si está anidado
+        if (ObjView.transform.childCount > 0)
+        {
+            objetoARotar = ObjView.transform.GetChild(0); // Rota el primer hijo
+        }
+        else
+        {
+            objetoARotar = ObjView.transform; // Si no tiene hijos, rota el mismo objeto
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0)) // Detecta clic inicial
+        {
+            lastMousePosition = Input.mousePosition;
+        }
+
+        if (Input.GetMouseButton(0)) // Mientras se mantenga el clic
+        {
+            Vector3 delta = Input.mousePosition - lastMousePosition;
+            float rotX = delta.y * rotationSpeed * Time.deltaTime;
+            float rotY = -delta.x * rotationSpeed * Time.deltaTime;
+
+            if (objetoARotar != null)
+            {
+                objetoARotar.Rotate(Vector3.right, rotX, Space.World);
+                objetoARotar.Rotate(Vector3.up, rotY, Space.World);
+            }
+
+            lastMousePosition = Input.mousePosition;
+        }
+    }
+}

@@ -528,6 +528,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2969700971846962003, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_Name
+      value: EXIT
+      objectReference: {fileID: 0}
     - target: {fileID: 6556765344876843078, guid: 1019a2c8acfca1b47a140b93bf9c3107,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -537,6 +542,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256697582286099125, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_Name
+      value: START
       objectReference: {fileID: 0}
     - target: {fileID: 9053233575618241652, guid: 1019a2c8acfca1b47a140b93bf9c3107,
         type: 3}
