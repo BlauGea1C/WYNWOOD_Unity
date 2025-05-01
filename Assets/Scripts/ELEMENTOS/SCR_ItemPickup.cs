@@ -29,6 +29,7 @@ public class SCR_ItemPickup : MonoBehaviour
                         if (!string.IsNullOrEmpty(item.id))
                         {
                             InventoryManager.Instance.OnItemPicked(item);
+                            DialogManager.Instance.ShowMessage(item.mensajes);
                             Destroy(gameObject);
                         }
                         else
@@ -40,6 +41,7 @@ public class SCR_ItemPickup : MonoBehaviour
                     {
                         if (canvasToActivate != null)
                         {
+                            DialogManager.Instance.ShowMessage("me guarde el codigo en la mochila (inventario) ");
                             canvasToActivate.SetActive(true);
                             Cursor.visible = true;
                             Cursor.lockState = CursorLockMode.None;
@@ -53,6 +55,7 @@ public class SCR_ItemPickup : MonoBehaviour
                     {
                         if (InventoryManager.Instance.HasKeyForDoor(item))
                         {
+                            DialogManager.Instance.ShowMessage("Miremos que tiene por aca  ");
                             Destroy(gameObject);
                             Debug.Log("La puerta ha sido abierta.");
                         }

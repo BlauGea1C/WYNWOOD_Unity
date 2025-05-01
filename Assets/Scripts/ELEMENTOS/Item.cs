@@ -15,6 +15,7 @@ public class Item : ScriptableObject
      public bool Llave = false; // Si es una llave   
      public bool LlavesPuerta = false;
      public bool LlavesCaja = false;
+     public string mensajes;
 
 
 }

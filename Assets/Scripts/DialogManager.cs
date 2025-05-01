@@ -9,6 +9,13 @@ public class DialogManager : MonoBehaviour
     public TextMeshProUGUI messageText;
     private Coroutine messageCoroutine;
 
+    private void Start()
+    {
+        // Agrega contorno negro al texto
+        messageText.outlineColor = Color.black;
+        messageText.outlineWidth = 0.2f; // Ajusta según lo que necesites
+    }
+
     private void Awake()
     {
         if (Instance == null)

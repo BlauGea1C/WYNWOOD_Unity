@@ -44,6 +44,7 @@ public class InventoryButton : MonoBehaviour
         if (InventoryManager.Instance != null)
         {
             InventoryManager.Instance.Add(item);
+            DialogManager.Instance.ShowMessage(item.mensajes);
         }
         else
         {

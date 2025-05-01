@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Foto padre-hijo_de_Liam
   m_EditorClassIdentifier: 
   id: 07
-  itemsName: Foto padre Liam
+  itemsName: Foto padre Noah
   ItemIcono: {fileID: 21300000, guid: 62fe5ff9b206a4145b657bec4ea1d9ee, type: 3}
   Objeto3D: {fileID: 0}
   loc: 
   Llave: 0
   LlavesPuerta: 0
   LlavesCaja: 0
+  mensajes: Que monos; Noah y su padre
