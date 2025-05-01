@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 11
   itemsName: Llave diario
   ItemIcono: {fileID: 21300000, guid: 34a49a978f9d89f4ba3a68c4181287cb, type: 3}
-  Objeto3D: {fileID: 487098346825441265, guid: 2443b46b1bd358149bca0af6d8972791, type: 3}
+  Objeto3D: {fileID: 919132149155446097, guid: 811b44038b9d4114aa87be045a816507, type: 3}
   loc: 
   Llave: 1
   LlavesPuerta: 0

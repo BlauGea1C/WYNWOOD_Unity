@@ -165,28 +165,6 @@ public class InventoryManager : MonoBehaviour
         Add(item);
     }
 
-    /*public void ShowRawImage(Item item)
-    {
-        if (CanvasRawImage != null)
-        {
-            mo.SetActive(false);
-            var NewItemID = item.id;
-            int ItemEnLista = Items.FindIndex(i => i.id == item.id);
-            CanvasRawImage.SetActive(true);
-            ObjExpositor = Instantiate(Items[ItemEnLista].Objeto3D, Expositor.transform);
-            ObjExpositor.layer = LayerMask.NameToLayer("CamaraObj3D");
-
-            foreach (Transform Meshes in ObjExpositor.transform)
-            {
-                Meshes.gameObject.layer = LayerMask.NameToLayer("CamaraObj3D");
-            }
-
-            ObjExpositor.transform.localPosition = Vector3.zero;
-            Scroll.enabled = false;
-            isRawImageOpen = true;
-        }
-    }*/
-
     public void ShowRawImage(Item item)
     {
         if (CanvasRawImage != null)
@@ -218,7 +196,9 @@ public class InventoryManager : MonoBehaviour
             isRawImageOpen = true;
         }
     }
+   
 
+  
     public void DisableRawImage()
     {
         if (CanvasRawImage != null)
