@@ -36,7 +36,11 @@ public class InventoryButton : MonoBehaviour
      }
  }*/
 
-    public GameObject panelToClose;
+    public GameObject panelToCloseMochila;
+    public GameObject panelToCloseTaquilla;
+    public GameObject panelToCloseCaixa;
+    public GameObject panelToCloseCalaix;
+    public GameObject panelToCloseDiario;
     public Item item;
 
     public void OnButtonClicked()
@@ -54,13 +58,47 @@ public class InventoryButton : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+
     public void OnCloseButtonClicked()
     {
-        if (panelToClose != null)
+        if (panelToCloseMochila != null)
         {
-            panelToClose.SetActive(false);
+            panelToCloseMochila.SetActive(false);
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
+        else if (panelToCloseTaquilla != null)
+        {
+            panelToCloseTaquilla.SetActive(false);
+            
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else if (panelToCloseCaixa != null)
+        {
+            panelToCloseCaixa.SetActive(false);
+
+            DialogManager.Instance.ShowMessage("Si voy a casa de amelia es posible que encuentre algo sobre su padre");
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else if (panelToCloseCalaix != null)
+        {
+            panelToCloseCalaix.SetActive(false);
+            DialogManager.Instance.ShowMessage("Tengo que avisar a mi madre, algo bueno habra por ser hija de la sheriff");
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else if (panelToCloseDiario != null)
+        {
+            panelToCloseDiario.SetActive(false);
+            DialogManager.Instance.ShowMessage("Parece ser que Noah descubrió algo importante, espero que por esto no haya muerto");
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
     }
+
+   
 }
