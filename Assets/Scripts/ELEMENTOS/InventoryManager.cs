@@ -75,10 +75,10 @@ public class InventoryManager : MonoBehaviour
             {
                 teleportScript.DesbloquearBoton5();
             }
-            else if (item.loc == "6")
+            /*else if (item.loc == "6")
             {
                 teleportScript.DesbloquearBoton6();
-            }
+            }*/
         }
 
         ListItems(); // Actualizar la UI
@@ -145,7 +145,7 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
-    // Verifica si el jugador tiene la llave para caja/diario y la elimina si la usa
+    // Verifica si el jugador tiene la llave para caja/diario/cajon y la elimina si la usa
     public bool HasKeyForBox(Item boxItem)
     {
         for (int i = 0; i < Items.Count; i++)
@@ -157,7 +157,7 @@ public class InventoryManager : MonoBehaviour
                 return true; // Se encontró y eliminó la llave
             }
         }
-        DialogManager.Instance.ShowMessage("Esta caja está cerrada. Necesitas una llave.");
+        DialogManager.Instance.ShowMessage("Está cerrado. Necesitas una llave para abrilo.");
         return false;
     }
     public void OnItemPicked(Item item)

@@ -68,11 +68,11 @@ public class SCR_ItemPickup : MonoBehaviour
                             canvasToActivate.SetActive(true);
                             Cursor.visible = true;
                             Cursor.lockState = CursorLockMode.None;
-                            Debug.Log("La caja / diario ha sido abierta.");
+                            Debug.Log("La caja / diario / cajon ha sido abierta.");
                         }
                         else
                         {
-                            Debug.Log("No tienes la llave para abrir esta caja / diario.");
+                            Debug.Log("No tienes la llave para abrir esta caja / diario / cajon.");
                         }
                     }
                 }
