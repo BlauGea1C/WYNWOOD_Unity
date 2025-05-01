@@ -9,8 +9,11 @@ public class SCR_ItemPickup : MonoBehaviour
     public bool isCandadoItem = false;
     public bool isPuertaItem = false;
     public bool isCajaDiaro = false;
+    public bool isMochila = false;
     public Item item;
     public GameObject canvasToActivate;
+
+    private bool isAlreadyOpened = false;
 
     private void Update()
     {
@@ -41,7 +44,7 @@ public class SCR_ItemPickup : MonoBehaviour
                     {
                         if (canvasToActivate != null)
                         {
-                            DialogManager.Instance.ShowMessage("me guarde el codigo en la mochila (inventario) ");
+                            DialogManager.Instance.ShowMessage("me guarde el codigo en la mochila ");
                             canvasToActivate.SetActive(true);
                             Cursor.visible = true;
                             Cursor.lockState = CursorLockMode.None;
@@ -66,16 +69,43 @@ public class SCR_ItemPickup : MonoBehaviour
                     }
                     else if (isCajaDiaro)
                     {
-                        if (InventoryManager.Instance.HasKeyForBox(item))
+                        if (!isAlreadyOpened)
+                        {
+                            if (InventoryManager.Instance.HasKeyForBox(item))
+                            {
+                               
+                                isAlreadyOpened = true;
+                                canvasToActivate.SetActive(true);
+                                Cursor.visible = true;
+                                Cursor.lockState = CursorLockMode.None;
+                                Debug.Log("La caja / diario / cajon ha sido abierta.");
+                            }
+                            else
+                            {
+                                Debug.Log("No tienes la llave para abrir esta caja / diario / cajon.");
+                                return;
+                            }
+
+                        }
+                        else
                         {
                             canvasToActivate.SetActive(true);
                             Cursor.visible = true;
                             Cursor.lockState = CursorLockMode.None;
-                            Debug.Log("La caja / diario / cajon ha sido abierta.");
+                        }
+                    }
+                    else if (isMochila)
+                    {
+                        if (canvasToActivate != null)
+                        {
+                            
+                            canvasToActivate.SetActive(true);
+                            Cursor.visible = true;
+                            Cursor.lockState = CursorLockMode.None;
                         }
                         else
                         {
-                            Debug.Log("No tienes la llave para abrir esta caja / diario / cajon.");
+                            Debug.LogError("No se ha asignado un Canvas para activar.");
                         }
                     }
                 }
