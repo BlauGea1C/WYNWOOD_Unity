@@ -1195,7 +1195,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Expositor
       value: 
-      objectReference: {fileID: 2025646997}
+      objectReference: {fileID: 308210215}
     - target: {fileID: 5450432458862846363, guid: cee23a81e07a7d849919ede3ce62248c,
         type: 3}
       propertyPath: InventoryUI
