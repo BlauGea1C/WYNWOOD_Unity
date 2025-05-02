@@ -13,7 +13,7 @@ public class DialogManager : MonoBehaviour
     {
         // Agrega contorno negro al texto
         messageText.outlineColor = Color.black;
-        messageText.outlineWidth = 0.2f; // Ajusta según lo que necesites
+        messageText.outlineWidth = 0.6f; // Ajusta según lo que necesites
     }
 
     private void Awake()
@@ -28,7 +28,7 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    public void ShowMessage(string message, float duration = 2f)
+    public void ShowMessage(string message, float duration = 4f)
     {
         if (messageCoroutine != null)
         {

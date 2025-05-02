@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 06
   itemsName: Documentos
   ItemIcono: {fileID: 21300000, guid: e6b6a01c58c62cf498707bd770e311d2, type: 3}
-  Objeto3D: {fileID: 0}
+  Objeto3D: {fileID: 919132149155446097, guid: bd55f3f139bcb824bb2bfcd5797ea9cc, type: 3}
   loc: 
   Llave: 0
   LlavesPuerta: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 16
   itemsName: Tarjeta trabajo
   ItemIcono: {fileID: 21300000, guid: 7349474592a936a44b583221bdd1f930, type: 3}
-  Objeto3D: {fileID: 0}
+  Objeto3D: {fileID: 919132149155446097, guid: 59a26f8c22a30f04c97d3ab29aa69467, type: 3}
   loc: 4
   Llave: 0
   LlavesPuerta: 0

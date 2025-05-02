@@ -74,7 +74,7 @@ public class KeyPad : MonoBehaviour
     }*/
     [SerializeField] private TextMeshProUGUI Ans;
 
-    private string contra = "1234";
+    private string contra = "6247";
     private float resetTime = 2f;
     public GameObject panelToClose;
     public GameObject TaquillaUI;

@@ -79,3 +79,24 @@ Shader "Custom/Outline Fill" {
     }
   }
 }
+
+Shader "Custom/FullHighlight"
+{
+    Properties
+    {
+        _OutlineColor("Outline Color", Color) = (1,1,0,1)
+    }
+    SubShader
+    {
+        Tags { "RenderType"="Opaque" }
+        Pass
+        {
+            ZTest Always
+            ZWrite Off
+            Cull Off
+            Lighting Off
+            Fog { Mode Off }
+            Color [_OutlineColor]
+        }
+    }
+}

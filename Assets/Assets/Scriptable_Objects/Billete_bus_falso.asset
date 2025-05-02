@@ -15,8 +15,7 @@ MonoBehaviour:
   id: 03
   itemsName: Billete falso
   ItemIcono: {fileID: 21300000, guid: b04831cf7a6f10b4e9ae453e78b78beb, type: 3}
-  Objeto3D: {fileID: 6669627110941853982, guid: 9d61787fa1eb7d241b641c229a71d825,
-    type: 3}
+  Objeto3D: {fileID: 919132149155446097, guid: b856f88eb6fc0544d965cd551d59784b, type: 3}
   loc: 
   Llave: 0
   LlavesPuerta: 0
