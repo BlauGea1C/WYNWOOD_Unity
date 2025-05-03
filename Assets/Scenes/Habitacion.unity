@@ -232,6 +232,7 @@ MonoBehaviour:
   isMochila: 0
   item: {fileID: 11400000, guid: e9e6f0a8f2a6e71498577496950a74d5, type: 2}
   canvasToActivate: {fileID: 0}
+  canvasToActivateCandado2: {fileID: 0}
 --- !u!114 &1418893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,6 +629,7 @@ MonoBehaviour:
   isMochila: 0
   item: {fileID: 11400000, guid: d71f14cfcf3efce4f8284656d7c7ce78, type: 2}
   canvasToActivate: {fileID: 0}
+  canvasToActivateCandado2: {fileID: 0}
 --- !u!114 &21838514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3269,6 +3271,7 @@ MonoBehaviour:
   isMochila: 0
   item: {fileID: 11400000, guid: 44e19b825bbb00d4a8ca9e3b09d470c8, type: 2}
   canvasToActivate: {fileID: 0}
+  canvasToActivateCandado2: {fileID: 0}
 --- !u!1 &324725682
 GameObject:
   m_ObjectHideFlags: 0
@@ -3644,6 +3647,7 @@ MonoBehaviour:
   isMochila: 0
   item: {fileID: 11400000, guid: c9e584c8fe3867b42b3c16d164b8c591, type: 2}
   canvasToActivate: {fileID: 0}
+  canvasToActivateCandado2: {fileID: 0}
 --- !u!1 &345613838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3788,6 +3792,7 @@ MonoBehaviour:
   isMochila: 0
   item: {fileID: 11400000, guid: 934fa37c37dacd440abe13253c095c26, type: 2}
   canvasToActivate: {fileID: 0}
+  canvasToActivateCandado2: {fileID: 0}
 --- !u!114 &354102639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6250,6 +6255,7 @@ MonoBehaviour:
   isMochila: 0
   item: {fileID: 11400000, guid: b1482a88d162939418e21ab457494801, type: 2}
   canvasToActivate: {fileID: 0}
+  canvasToActivateCandado2: {fileID: 0}
 --- !u!114 &568153843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7594,6 +7600,7 @@ MonoBehaviour:
   isMochila: 0
   item: {fileID: 0}
   canvasToActivate: {fileID: 866947706}
+  canvasToActivateCandado2: {fileID: 0}
 --- !u!114 &702332139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10051,7 +10058,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 30
   m_TargetDisplay: 0
 --- !u!1 &1066507464
 GameObject:
@@ -10828,6 +10835,7 @@ MonoBehaviour:
   isMochila: 0
   item: {fileID: 0}
   canvasToActivate: {fileID: 1968103638}
+  canvasToActivateCandado2: {fileID: 0}
 --- !u!114 &1125489960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11877,6 +11885,7 @@ MonoBehaviour:
   isMochila: 0
   item: {fileID: 11400000, guid: 5529b23bc46d88645a5c8510f8582e9d, type: 2}
   canvasToActivate: {fileID: 0}
+  canvasToActivateCandado2: {fileID: 0}
 --- !u!114 &1170687528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15277,6 +15286,7 @@ MonoBehaviour:
   isMochila: 0
   item: {fileID: 0}
   canvasToActivate: {fileID: 0}
+  canvasToActivateCandado2: {fileID: 0}
 --- !u!1 &1577793856
 GameObject:
   m_ObjectHideFlags: 0
@@ -15657,6 +15667,7 @@ MonoBehaviour:
   isMochila: 0
   item: {fileID: 11400000, guid: abee0ef428a9a03479ca3464b981674a, type: 2}
   canvasToActivate: {fileID: 0}
+  canvasToActivateCandado2: {fileID: 0}
 --- !u!1 &1610493561
 GameObject:
   m_ObjectHideFlags: 0
@@ -15711,6 +15722,7 @@ MonoBehaviour:
   isMochila: 1
   item: {fileID: 0}
   canvasToActivate: {fileID: 312904315}
+  canvasToActivateCandado2: {fileID: 0}
 --- !u!114 &1610493564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17429,6 +17441,7 @@ MonoBehaviour:
   isMochila: 0
   item: {fileID: 0}
   canvasToActivate: {fileID: 1145161493}
+  canvasToActivateCandado2: {fileID: 1036753019}
 --- !u!114 &1931171682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19294,6 +19307,7 @@ MonoBehaviour:
   isMochila: 0
   item: {fileID: 0}
   canvasToActivate: {fileID: 1114462668}
+  canvasToActivateCandado2: {fileID: 0}
 --- !u!114 &2113513193
 MonoBehaviour:
   m_ObjectHideFlags: 0

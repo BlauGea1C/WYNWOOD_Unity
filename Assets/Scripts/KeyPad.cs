@@ -82,7 +82,7 @@ public class KeyPad : MonoBehaviour
     void OnEnable()
     {
         Ans.text = "";
-        Time.timeScale = 0f; // Congela el juego al abrir el KeyPad
+     
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
@@ -111,7 +111,7 @@ public class KeyPad : MonoBehaviour
             if (panelToClose != null)
             {
                 panelToClose.SetActive(false);
-                Time.timeScale = 1f; // Reanuda el juego al cerrar el KeyPad
+               
             }
         }
         else
@@ -134,7 +134,7 @@ public class KeyPad : MonoBehaviour
             panelToClose.SetActive(false);
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-            Time.timeScale = 1f; // Reanuda el juego al cerrar
+            
         }
     }
 }

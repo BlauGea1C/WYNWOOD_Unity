@@ -74,7 +74,7 @@ public class Scr_PlayerMovement : MonoBehaviour
             Debug.LogError("Inventory Manager not assigned!");
          }
 
-        LockCursor(true);
+        //LockCursor(true);
     }
 
     void Update()

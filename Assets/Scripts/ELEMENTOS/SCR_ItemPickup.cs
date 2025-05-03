@@ -12,6 +12,7 @@ public class SCR_ItemPickup : MonoBehaviour
     public bool isMochila = false;
     public Item item;
     public GameObject canvasToActivate;
+    public GameObject canvasToActivateCandado2;
 
     private bool isAlreadyOpened = false;
 
@@ -42,18 +43,29 @@ public class SCR_ItemPickup : MonoBehaviour
                     }
                     else if (isCandadoItem)
                     {
-                        if (canvasToActivate != null)
+                        if (!isAlreadyOpened)
                         {
-                            DialogManager.Instance.ShowMessage("me guarde el codigo en la mochila ");
-                            canvasToActivate.SetActive(true);
-                            Cursor.visible = true;
-                            Cursor.lockState = CursorLockMode.None;
+                            if (canvasToActivate != null)
+                            {
+                                isAlreadyOpened = true;
+                                DialogManager.Instance.ShowMessage("me guarde el codigo en la mochila ");
+                                canvasToActivate.SetActive(true);
+                                Cursor.visible = true;
+                                Cursor.lockState = CursorLockMode.None;
+                            }
+                            else
+                            {
+                                Debug.LogError("No se ha asignado un Canvas para activar.");
+                                return;
+                            }
                         }
                         else
-                        {
-                            Debug.LogError("No se ha asignado un Canvas para activar.");
+                            {
+                                canvasToActivateCandado2.SetActive(true);
+                                Cursor.visible = true;
+                                Cursor.lockState = CursorLockMode.None;
+                            }
                         }
-                    }
                     else if (isPuertaItem)
                     {
                         if (InventoryManager.Instance.HasKeyForDoor(item))
