@@ -407,8 +407,6 @@ public class Outline : MonoBehaviour
 
         LoadSmoothNormals();
         needsUpdate = true;
-
-
     }
 
     void OnEnable()
