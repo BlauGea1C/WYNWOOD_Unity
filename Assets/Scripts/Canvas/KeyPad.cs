@@ -78,6 +78,8 @@ public class KeyPad : MonoBehaviour
     private float resetTime = 2f;
     public GameObject panelToClose;
     public GameObject TaquillaUI;
+    //public bool open = false;
+    private KeyPad keyPad;
 
     void OnEnable()
     {
@@ -103,6 +105,7 @@ public class KeyPad : MonoBehaviour
 
             if (TaquillaUI != null)
             {
+                
                 TaquillaUI.SetActive(true);
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;

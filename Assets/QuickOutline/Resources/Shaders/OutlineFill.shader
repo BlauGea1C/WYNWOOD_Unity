@@ -5,7 +5,7 @@
 //  Created by Chris Nolet on 2/21/18.
 //  Copyright © 2018 Chris Nolet. All rights reserved.
 //
-
+/*
 Shader "Custom/Outline Fill" {
   Properties {
     [Enum(UnityEngine.Rendering.CompareFunction)] _ZTest("ZTest", Float) = 0
@@ -79,4 +79,74 @@ Shader "Custom/Outline Fill" {
     }
   }
 }
+*/
 
+Shader "Custom/Outline Fill Universal" {
+  Properties {
+    [Enum(UnityEngine.Rendering.CompareFunction)] _ZTest("ZTest", Float) = 0
+    _OutlineColor("Outline Color", Color) = (1, 1, 1, 1)
+    _OutlineWidth("Outline Width", Range(0, 10)) = 2
+  }
+
+  SubShader {
+    Tags {
+      "Queue" = "Overlay"
+      "RenderType" = "Opaque"
+      "DisableBatching" = "True"
+    }
+
+    Pass {
+      Name "Fill"
+      Cull Front
+      ZTest [_ZTest]
+      ZWrite Off
+      ColorMask RGB
+      Blend SrcAlpha OneMinusSrcAlpha
+
+      Stencil {
+        Ref 1
+        Comp NotEqual
+      }
+
+      CGPROGRAM
+      #pragma vertex vert
+      #pragma fragment frag
+      #include "UnityCG.cginc"
+
+      struct appdata {
+        float4 vertex : POSITION;
+        float3 normal : NORMAL;
+        float3 smoothNormal : TEXCOORD3;
+        UNITY_VERTEX_INPUT_INSTANCE_ID
+      };
+
+      struct v2f {
+        float4 position : SV_POSITION;
+        fixed4 color : COLOR;
+        UNITY_VERTEX_OUTPUT_STEREO
+      };
+
+      fixed4 _OutlineColor;
+      float _OutlineWidth;
+
+      v2f vert(appdata v) {
+        v2f o;
+        UNITY_SETUP_INSTANCE_ID(v);
+        UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+
+        float3 normal = any(v.smoothNormal) ? v.smoothNormal : v.normal;
+        float3 viewPos = UnityObjectToViewPos(v.vertex);
+        float3 viewNormal = normalize(mul((float3x3)UNITY_MATRIX_IT_MV, normal));
+
+        o.position = UnityViewToClipPos(viewPos + viewNormal * -viewPos.z * _OutlineWidth / 1000.0);
+        o.color = _OutlineColor;
+        return o;
+      }
+
+      fixed4 frag(v2f i) : SV_Target {
+        return i.color;
+      }
+      ENDCG
+    }
+  }
+}

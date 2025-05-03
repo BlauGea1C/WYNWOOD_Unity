@@ -11,6 +11,7 @@ public class SCR_ItemPickup : MonoBehaviour
     public bool isCajaDiaro = false;
     public bool isMochila = false;
     public Item item;
+    public KeyPad keyPad;
     public GameObject canvasToActivate;
     public GameObject canvasToActivateCandado2;
 
@@ -47,6 +48,7 @@ public class SCR_ItemPickup : MonoBehaviour
                         {
                             if (canvasToActivate != null)
                             {
+
                                 isAlreadyOpened = true;
                                 DialogManager.Instance.ShowMessage("me guarde el codigo en la mochila ");
                                 canvasToActivate.SetActive(true);
