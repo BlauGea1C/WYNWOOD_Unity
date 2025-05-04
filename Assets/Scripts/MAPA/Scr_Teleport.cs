@@ -68,7 +68,10 @@ public class Scr_Teleport : MonoBehaviour
     public void TeleportTo1() { TeleportTo(teleportPoint1); }
     public void TeleportTo2() { TeleportTo(teleportPoint2); }
     public void TeleportTo3() { TeleportTo(teleportPoint3); }
-    public void TeleportTo4() { TeleportTo(teleportPoint4); }
+    public void TeleportTo4() { 
+        TeleportTo(teleportPoint4); 
+        DialogManager.Instance.ShowMessage("Necesitas una llave para abrir esta puerta."); 
+    }
     public void TeleportTo5() { TeleportTo(teleportPoint5); }
    // public void TeleportTo6() { TeleportTo(teleportPoint6); }
 

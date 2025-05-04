@@ -127,6 +127,7 @@ public class Scr_PlayerMovement : MonoBehaviour
         // Detecta cuando el jugador presiona la tecla M para abrir/cerrar el mapa
         if (Input.GetKeyDown(KeyCode.P))
         {
+            audioInveatrio.Play();
             if (PausaMenu != null)
             {
                 PausaMenu.SetActive(!PausaMenu.activeSelf);
