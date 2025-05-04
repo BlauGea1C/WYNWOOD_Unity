@@ -428,6 +428,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1180052705824158978, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 165.922
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180052705824158978, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 130.6734
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180052705824158978, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5.8628
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180052705824158978, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -381.6314
+      objectReference: {fileID: 0}
     - target: {fileID: 1712321592175698559, guid: 1019a2c8acfca1b47a140b93bf9c3107,
         type: 3}
       propertyPath: m_Pivot.x
@@ -528,11 +548,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2058048874637774477, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 162.961
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058048874637774477, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 126.232
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058048874637774477, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.3823
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058048874637774477, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -84.8789
+      objectReference: {fileID: 0}
     - target: {fileID: 2969700971846962003, guid: 1019a2c8acfca1b47a140b93bf9c3107,
         type: 3}
       propertyPath: m_Name
       value: EXIT
       objectReference: {fileID: 0}
+    - target: {fileID: 3388778446053055724, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 974ce9368b8c20c48b018d770e3c2b98,
+        type: 3}
+    - target: {fileID: 3388778446053055724, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440574149375239205, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440574149375239205, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aa801a10cabdaff429b994e00936f313,
+        type: 3}
     - target: {fileID: 6556765344876843078, guid: 1019a2c8acfca1b47a140b93bf9c3107,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -548,6 +610,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: START
       objectReference: {fileID: 0}
+    - target: {fileID: 8841473958976379205, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8841473958976379205, guid: 1019a2c8acfca1b47a140b93bf9c3107,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ab8b03ece6434024ca9e34101a68bb54,
+        type: 3}
     - target: {fileID: 9053233575618241652, guid: 1019a2c8acfca1b47a140b93bf9c3107,
         type: 3}
       propertyPath: m_Name
@@ -555,7 +628,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3739468018094961371, guid: 1019a2c8acfca1b47a140b93bf9c3107, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 809735900710149238, guid: 1019a2c8acfca1b47a140b93bf9c3107, type: 3}
+    - {fileID: 7774415927353034576, guid: 1019a2c8acfca1b47a140b93bf9c3107, type: 3}
+    - {fileID: 7157012789415970677, guid: 1019a2c8acfca1b47a140b93bf9c3107, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 554558399403338930, guid: 1019a2c8acfca1b47a140b93bf9c3107,
