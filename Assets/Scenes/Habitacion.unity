@@ -365,6 +365,7 @@ MonoBehaviour:
   panelToCloseCalaix: {fileID: 0}
   panelToCloseDiario: {fileID: 0}
   item: {fileID: 11400000, guid: 8f884410e9c6ebd428c917aae12f4f68, type: 2}
+  audioSourceBotones: {fileID: 0}
 --- !u!1 &14752934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1133,11 @@ PrefabInstance:
       objectReference: {fileID: 308210215}
     - target: {fileID: 5450432458862846363, guid: cee23a81e07a7d849919ede3ce62248c,
         type: 3}
+      propertyPath: audioItem
+      value: 
+      objectReference: {fileID: 2116919675}
+    - target: {fileID: 5450432458862846363, guid: cee23a81e07a7d849919ede3ce62248c,
+        type: 3}
       propertyPath: InventoryUI
       value: 
       objectReference: {fileID: 560549424}
@@ -1140,6 +1146,11 @@ PrefabInstance:
       propertyPath: ItemContent
       value: 
       objectReference: {fileID: 1019383438}
+    - target: {fileID: 5450432458862846363, guid: cee23a81e07a7d849919ede3ce62248c,
+        type: 3}
+      propertyPath: audioCerrado
+      value: 
+      objectReference: {fileID: 459387013}
     - target: {fileID: 5450432458862846363, guid: cee23a81e07a7d849919ede3ce62248c,
         type: 3}
       propertyPath: CanvasRawImage
@@ -2117,6 +2128,7 @@ MonoBehaviour:
   Ans: {fileID: 1991240450}
   panelToClose: {fileID: 1145161493}
   TaquillaUI: {fileID: 1036753019}
+  audioCerrado: {fileID: 459387013}
 --- !u!1 &202811304
 GameObject:
   m_ObjectHideFlags: 0
@@ -4822,8 +4834,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 13114cf23d4dd6b4fa211d23c3d7eb37, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -5052,6 +5064,7 @@ MonoBehaviour:
   panelToCloseCalaix: {fileID: 0}
   panelToCloseDiario: {fileID: 0}
   item: {fileID: 11400000, guid: c9e584c8fe3867b42b3c16d164b8c591, type: 2}
+  audioSourceBotones: {fileID: 0}
 --- !u!1 &482392643
 GameObject:
   m_ObjectHideFlags: 0
@@ -6782,11 +6795,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 50ec05c1daf2d1748be906c7284871fb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.034
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -8151,6 +8164,7 @@ MonoBehaviour:
   panelToCloseCalaix: {fileID: 1968103638}
   panelToCloseDiario: {fileID: 0}
   item: {fileID: 0}
+  audioSourceBotones: {fileID: 882498901}
 --- !u!4 &755296339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6bd2c605f3f94af49b4423cde56a235a,
@@ -8721,6 +8735,7 @@ MonoBehaviour:
   panelToCloseCalaix: {fileID: 0}
   panelToCloseDiario: {fileID: 0}
   item: {fileID: 11400000, guid: 79f99d81de28d1d4abe5543b54df633a, type: 2}
+  audioSourceBotones: {fileID: 0}
 --- !u!1 &866947706
 GameObject:
   m_ObjectHideFlags: 0
@@ -8954,6 +8969,7 @@ MonoBehaviour:
   panelToCloseCalaix: {fileID: 0}
   panelToCloseDiario: {fileID: 0}
   item: {fileID: 0}
+  audioSourceBotones: {fileID: 882498901}
 --- !u!1 &881352134
 GameObject:
   m_ObjectHideFlags: 0
@@ -9761,6 +9777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPausa: {fileID: 157345376}
+  audioSourceBotones: {fileID: 882498901}
 --- !u!1 &988396245
 GameObject:
   m_ObjectHideFlags: 0
@@ -9816,6 +9833,7 @@ MonoBehaviour:
   panelToCloseCalaix: {fileID: 0}
   panelToCloseDiario: {fileID: 0}
   item: {fileID: 0}
+  audioSourceBotones: {fileID: 882498901}
 --- !u!1 &1018420647
 GameObject:
   m_ObjectHideFlags: 0
@@ -10507,6 +10525,7 @@ MonoBehaviour:
   panelToCloseCalaix: {fileID: 0}
   panelToCloseDiario: {fileID: 0}
   item: {fileID: 11400000, guid: e3fba9fe042f6d04a9d32cfde993b540, type: 2}
+  audioSourceBotones: {fileID: 0}
 --- !u!1 &1076612995
 GameObject:
   m_ObjectHideFlags: 0
@@ -10643,6 +10662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasTutorial: {fileID: 1054542552}
   mira: {fileID: 388631784}
+  audioSourceBotones: {fileID: 882498901}
 --- !u!4 &1085150938
 Transform:
   m_ObjectHideFlags: 0
@@ -13160,6 +13180,7 @@ MonoBehaviour:
   panelToCloseCalaix: {fileID: 0}
   panelToCloseDiario: {fileID: 0}
   item: {fileID: 0}
+  audioSourceBotones: {fileID: 882498901}
 --- !u!1001 &1304816036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13413,7 +13434,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -15658,6 +15679,7 @@ MonoBehaviour:
   panelToCloseCalaix: {fileID: 0}
   panelToCloseDiario: {fileID: 0}
   item: {fileID: 11400000, guid: 53ec84f024f6be642998a051c194af20, type: 2}
+  audioSourceBotones: {fileID: 0}
 --- !u!1001 &1545089059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16331,6 +16353,7 @@ MonoBehaviour:
   panelToCloseCalaix: {fileID: 0}
   panelToCloseDiario: {fileID: 866947706}
   item: {fileID: 0}
+  audioSourceBotones: {fileID: 882498901}
 --- !u!1 &1655415893
 GameObject:
   m_ObjectHideFlags: 0
@@ -18034,6 +18057,7 @@ MonoBehaviour:
   panelToCloseCalaix: {fileID: 0}
   panelToCloseDiario: {fileID: 0}
   item: {fileID: 11400000, guid: 7bd4a540eef520344ae3eecf434220da, type: 2}
+  audioSourceBotones: {fileID: 0}
 --- !u!1 &1945224924
 GameObject:
   m_ObjectHideFlags: 0
@@ -18598,6 +18622,7 @@ MonoBehaviour:
   panelToCloseCalaix: {fileID: 0}
   panelToCloseDiario: {fileID: 0}
   item: {fileID: 11400000, guid: 934fa37c37dacd440abe13253c095c26, type: 2}
+  audioSourceBotones: {fileID: 0}
 --- !u!1 &1974760744
 GameObject:
   m_ObjectHideFlags: 0
@@ -19784,7 +19809,7 @@ GameObject:
   - component: {fileID: 2116919674}
   - component: {fileID: 2116919675}
   m_Layer: 0
-  m_Name: Audio SourceDesbloqueoMapa
+  m_Name: Audio Sourceitems
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19815,9 +19840,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 9ed8f5f2b72e6a04da0cae8f69013cfe, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.688
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -20455,6 +20480,7 @@ MonoBehaviour:
   panelToCloseCalaix: {fileID: 0}
   panelToCloseDiario: {fileID: 0}
   item: {fileID: 11400000, guid: 44e19b825bbb00d4a8ca9e3b09d470c8, type: 2}
+  audioSourceBotones: {fileID: 0}
 --- !u!4 &543450651658132266
 Transform:
   m_ObjectHideFlags: 0

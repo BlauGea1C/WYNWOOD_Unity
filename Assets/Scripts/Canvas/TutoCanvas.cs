@@ -4,7 +4,7 @@ public class TutorialManager : MonoBehaviour
 {
     public GameObject canvasTutorial;
     public GameObject mira;
-
+    public AudioSource audioSourceBotones;
     void Start()
     {
         // Si el canvas del tutorial está activo, desbloquear el cursor
@@ -20,6 +20,7 @@ public class TutorialManager : MonoBehaviour
 
     public void CerrarTutorial()
     {
+        audioSourceBotones.Play();
         canvasTutorial.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

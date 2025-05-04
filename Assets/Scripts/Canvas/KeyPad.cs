@@ -80,7 +80,7 @@ public class KeyPad : MonoBehaviour
     public GameObject TaquillaUI;
     //public bool open = false;
     private KeyPad keyPad;
-
+    public AudioSource audioCerrado;
     void OnEnable()
     {
         Ans.text = "";
@@ -119,6 +119,7 @@ public class KeyPad : MonoBehaviour
         }
         else
         {
+            audioCerrado.Play();
             Ans.text = "ERROR";
             StartCoroutine(ClearTextAfterDelay());
         }

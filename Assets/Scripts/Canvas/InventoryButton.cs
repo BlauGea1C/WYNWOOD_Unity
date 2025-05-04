@@ -13,6 +13,7 @@ public class InventoryButton : MonoBehaviour
     public GameObject panelToCloseDiario;
     public Item item;
 
+    public AudioSource audioSourceBotones;
     public void OnButtonClicked()
     {
         if (InventoryManager.Instance != null)
@@ -33,12 +34,14 @@ public class InventoryButton : MonoBehaviour
     {
         if (panelToCloseMochila != null)
         {
+            audioSourceBotones.Play();
             panelToCloseMochila.SetActive(false);
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
         else if (panelToCloseTaquilla != null)
         {
+            audioSourceBotones.Play();
             panelToCloseTaquilla.SetActive(false);
             
             Cursor.visible = false;
@@ -46,6 +49,7 @@ public class InventoryButton : MonoBehaviour
         }
         else if (panelToCloseCaixa != null)
         {
+            audioSourceBotones.Play();
             panelToCloseCaixa.SetActive(false);
 
             DialogManager.Instance.ShowMessage("Si voy a casa de amelia es posible que encuentre algo sobre su padre");
@@ -55,6 +59,7 @@ public class InventoryButton : MonoBehaviour
         }
         else if (panelToCloseCalaix != null)
         {
+            audioSourceBotones.Play();
             panelToCloseCalaix.SetActive(false);
             DialogManager.Instance.ShowMessage("Tengo que avisar a mi madre, algo bueno habra por ser hija de la sheriff");
             Cursor.visible = false;
@@ -62,6 +67,7 @@ public class InventoryButton : MonoBehaviour
         }
         else if (panelToCloseDiario != null)
         {
+            audioSourceBotones.Play();
             panelToCloseDiario.SetActive(false);
             DialogManager.Instance.ShowMessage("Parece ser que Noah descubrió algo importante, espero que por esto no haya muerto");
             Cursor.visible = false;

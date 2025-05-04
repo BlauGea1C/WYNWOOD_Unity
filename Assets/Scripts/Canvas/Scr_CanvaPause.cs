@@ -7,6 +7,7 @@ public class Scr_CanvaPause : MonoBehaviour
 {
   
     [SerializeField] private GameObject menuPausa;
+    public AudioSource audioSourceBotones;
 
     private void Update()
     {
@@ -14,6 +15,7 @@ public class Scr_CanvaPause : MonoBehaviour
         {
             if (menuPausa.activeSelf)
             {
+
                 // Si el menú está activo, desactivar y reanudar el juego
                 continuar();
 
@@ -30,18 +32,18 @@ public class Scr_CanvaPause : MonoBehaviour
 
     public void continuar()
     {
-
+        audioSourceBotones.Play();
         menuPausa.SetActive(false);
     }
     public void ChangeSceneRestart(int sceneIndex)
     {
-       
+        audioSourceBotones.Play();
         SceneManager.LoadScene(sceneIndex);
     }
 
     public void ChangeSceneExit(int sceneIndex)
     {
-      
+        audioSourceBotones.Play();
         SceneManager.LoadScene(sceneIndex);
     }
 }

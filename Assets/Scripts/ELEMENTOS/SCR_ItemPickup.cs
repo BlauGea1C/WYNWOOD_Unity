@@ -44,8 +44,6 @@ public class SCR_ItemPickup : MonoBehaviour
                     }
                     else if (isCandadoItem)
                     {
-                        if (!isAlreadyOpened)
-                        {
                             if (canvasToActivate != null)
                             {
 
@@ -60,14 +58,9 @@ public class SCR_ItemPickup : MonoBehaviour
                                 Debug.LogError("No se ha asignado un Canvas para activar.");
                                 return;
                             }
-                        }
-                        else
-                            {
-                                canvasToActivateCandado2.SetActive(true);
-                                Cursor.visible = true;
-                                Cursor.lockState = CursorLockMode.None;
-                            }
-                        }
+                       
+                       
+                    }
                     else if (isPuertaItem)
                     {
                         if (InventoryManager.Instance.HasKeyForDoor(item))

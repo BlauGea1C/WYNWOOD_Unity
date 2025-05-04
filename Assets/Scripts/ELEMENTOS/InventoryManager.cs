@@ -502,6 +502,8 @@ public class InventoryManager : MonoBehaviour
     public GameObject mo;
     public LayerMask Viewer3D;
 
+    public AudioSource audioItem;
+    public AudioSource audioCerrado;
     private void Awake()
     {
         if (Instance == null)
@@ -527,8 +529,10 @@ public class InventoryManager : MonoBehaviour
 
     public void Add(Item item)
     {
+        
         Items.Add(item);
         Debug.Log("Ítem añadido: " + item.itemsName);
+       
 
         Scr_Teleport teleportScript = FindObjectOfType<Scr_Teleport>();
         if (teleportScript != null)
@@ -543,6 +547,7 @@ public class InventoryManager : MonoBehaviour
         }
 
         ListItems();
+        audioItem.Play();
     }
 
     public void AddFromCanvas(Item item, GameObject canvas)
@@ -597,6 +602,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
+        audioCerrado.Play();
         DialogManager.Instance.ShowMessage("Necesitas una llave para abrir esta puerta.");
         return false;
     }
@@ -612,7 +618,7 @@ public class InventoryManager : MonoBehaviour
                 return true;
             }
         }
-
+        audioCerrado.Play();
         DialogManager.Instance.ShowMessage("Está cerrado. Necesitas una llave para abrirlo.");
         return false;
     }
