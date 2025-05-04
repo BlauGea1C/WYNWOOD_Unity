@@ -32,6 +32,10 @@ public class Scr_PlayerMovement : MonoBehaviour
 
     public GameObject PausaMenu;
 
+    public AudioSource audioInveatrio;
+    public AudioSource audioMapa;
+    public AudioSource audioPisadas;
+
     /*void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -92,6 +96,7 @@ public class Scr_PlayerMovement : MonoBehaviour
         // Detecta cuando el jugador presiona la tecla E para abrir/cerrar el inventario
         if (Input.GetKeyDown(KeyCode.E))
         {
+            audioInveatrio.Play();
             if (inventoryManager.isRawImageOpen)
             {
                 inventoryManager.DisableRawImage();
@@ -108,6 +113,7 @@ public class Scr_PlayerMovement : MonoBehaviour
         // Detecta cuando el jugador presiona la tecla M para abrir/cerrar el mapa
         if (Input.GetKeyDown(KeyCode.M))
         {
+                audioMapa.Play();
             if (MapaUI != null)
             {
                 MapaUI.SetActive(!MapaUI.activeSelf);
@@ -134,6 +140,7 @@ public class Scr_PlayerMovement : MonoBehaviour
 
     void MovePlayer()
     {
+        audioPisadas.Play();
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
@@ -146,6 +153,24 @@ public class Scr_PlayerMovement : MonoBehaviour
         moveVelocity.y = ySpeed;
 
         controller.Move(moveVelocity * Time.deltaTime);
+
+        bool isMoving = horizontalInput != 0 || verticalInput != 0;
+
+        if (isMoving && controller.isGrounded)
+        {
+            if (!audioPisadas.isPlaying)
+            {
+                audioPisadas.Play();
+            }
+        }
+        else
+        {
+            if (audioPisadas.isPlaying)
+            {
+                audioPisadas.Stop();
+            }
+        }
+
     }
 
     void ApplyGravity()
