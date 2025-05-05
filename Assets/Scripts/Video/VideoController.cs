@@ -80,9 +80,9 @@ public class VideoController : MonoBehaviour
     public VideoPlayer videoPlayer;
 
     public VideoClip videoInicio;  // video al iniciar
-    public VideoClip videoFin;     // video al terminar
+   // public VideoClip videoFin;     // video al terminar
     public VideoClip video1;
-    public VideoClip video2;
+  //  public VideoClip video2;
    // public VideoClip video3;
    // public VideoClip video4;
 
@@ -92,7 +92,7 @@ public class VideoController : MonoBehaviour
    // public Button button4;
 
     private bool played1 = false;
-    private bool played2 = false;
+  //  private bool played2 = false;
     //private bool played3 = false;
   //  private bool played4 = false;
 
@@ -110,7 +110,7 @@ public class VideoController : MonoBehaviour
         videoPlayer.loopPointReached += OnVideoEnd;
 
         //  Reproducir video de inicio
-        PlayVideo(videoInicio);
+       PlayVideo(videoInicio);
     }
 
     void Update()
@@ -150,8 +150,8 @@ public class VideoController : MonoBehaviour
     }
 
     //  Método público para llamar desde otro script (por ejemplo al finalizar el juego)
-    public void ReproducirVideoFinal()
+    /*public void ReproducirVideoFinal()
     {
         PlayVideo(videoFin);
-    }
+    }*/
 }

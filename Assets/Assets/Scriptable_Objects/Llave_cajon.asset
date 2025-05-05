@@ -20,4 +20,4 @@ MonoBehaviour:
   Llave: 1
   LlavesPuerta: 0
   LlavesCaja: 1
-  mensajes: 
+  mensajes: "Est\xE1 con esta llave se debe de abrir el caj\xF3n del escritorio"

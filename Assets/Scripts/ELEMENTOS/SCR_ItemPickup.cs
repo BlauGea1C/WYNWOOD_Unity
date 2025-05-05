@@ -17,6 +17,8 @@ public class SCR_ItemPickup : MonoBehaviour
 
     private bool isAlreadyOpened = false;
 
+    public AudioSource audioPuertaAbierta;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -65,6 +67,7 @@ public class SCR_ItemPickup : MonoBehaviour
                     {
                         if (InventoryManager.Instance.HasKeyForDoor(item))
                         {
+                            audioPuertaAbierta.Play();
                             DialogManager.Instance.ShowMessage("Miremos que tiene por aca  ");
                             Destroy(gameObject);
                             Debug.Log("La puerta ha sido abierta.");
