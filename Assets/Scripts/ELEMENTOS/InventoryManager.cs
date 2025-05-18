@@ -622,7 +622,21 @@ public class InventoryManager : MonoBehaviour
         DialogManager.Instance.ShowMessage("Está cerrado. Necesitas una llave para abrirlo.");
         return false;
     }
-
+    public bool HasKeyForDiario(Item diarioItem)
+    {
+        for (int i = 0; i < Items.Count; i++)
+        {
+            if (Items[i].Llave && Items[i].LlavesDiario)
+            {
+                Items.RemoveAt(i);
+                ListItems();
+                return true;
+            }
+        }
+        audioCerrado.Play();
+        DialogManager.Instance.ShowMessage("Está cerrado. Necesitas la llave del diario.");
+        return false;
+    }
     public void OnItemPicked(Item item)
     {
         Add(item);

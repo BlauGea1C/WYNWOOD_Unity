@@ -10,6 +10,7 @@ public class SCR_ItemPickup : MonoBehaviour
     public bool isPuertaItem = false;
     public bool isCajaDiaro = false;
     public bool isMochila = false;
+    public bool isDiario = false;
     public Item item;
     public KeyPad keyPad;
     public GameObject canvasToActivate;
@@ -92,7 +93,34 @@ public class SCR_ItemPickup : MonoBehaviour
                             }
                             else
                             {
-                                Debug.Log("No tienes la llave para abrir esta caja / diario / cajon.");
+                                Debug.Log("No tienes la llave para abrir esta caja / cajon.");
+                                return;
+                            }
+
+                        }
+                        else
+                        {
+                            canvasToActivate.SetActive(true);
+                            Cursor.visible = true;
+                            Cursor.lockState = CursorLockMode.None;
+                        }
+                    }
+                    else if (isDiario)
+                    {
+                        if (!isAlreadyOpened)
+                        {
+                            if (InventoryManager.Instance.HasKeyForDiario(item))
+                            {
+
+                                isAlreadyOpened = true;
+                                canvasToActivate.SetActive(true);
+                                Cursor.visible = true;
+                                Cursor.lockState = CursorLockMode.None;
+                                Debug.Log("El diario ha sido abierta.");
+                            }
+                            else
+                            {
+                                Debug.Log("No tienes la llave para abrir este diario.");
                                 return;
                             }
 

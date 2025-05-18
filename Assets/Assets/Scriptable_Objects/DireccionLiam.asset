@@ -15,9 +15,10 @@ MonoBehaviour:
   id: 17
   itemsName: Direccion Noah
   ItemIcono: {fileID: 21300000, guid: 4328869d61d09024ab0bf5dc1e1b1822, type: 3}
-  Objeto3D: {fileID: 919132149155446097, guid: 6bd2c605f3f94af49b4423cde56a235a, type: 3}
+  Objeto3D: {fileID: 919132149155446097, guid: e73750bc5f6a40044b8ad9670be0bdd8, type: 3}
   loc: 2
   Llave: 0
   LlavesPuerta: 0
   LlavesCaja: 0
+  LlavesDiario: 0
   mensajes: "Esta es la direccion Noah deberia de mirar el mapa para dirigirme all\xED"

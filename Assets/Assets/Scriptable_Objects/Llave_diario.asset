@@ -19,5 +19,6 @@ MonoBehaviour:
   loc: 
   Llave: 1
   LlavesPuerta: 0
-  LlavesCaja: 1
-  mensajes: 
+  LlavesCaja: 0
+  LlavesDiario: 1
+  mensajes: Esto parece la llave de un diario

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 09
   itemsName: "Llave almac\xE9n"
   ItemIcono: {fileID: 21300000, guid: 42c26d2e483d5fa4b85f13b1dd407dc6, type: 3}
-  Objeto3D: {fileID: 919132149155446097, guid: 7d373e4461c42a6438bf564f27030ac8, type: 3}
+  Objeto3D: {fileID: 919132149155446097, guid: 901ed7b7fe437e644874d946e2aa194f, type: 3}
   loc: 
   Llave: 1
   LlavesPuerta: 1

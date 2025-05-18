@@ -15,9 +15,10 @@ MonoBehaviour:
   id: 10
   itemsName: Llave caja
   ItemIcono: {fileID: 21300000, guid: 90a571416311cfa4abf8110f123d1d30, type: 3}
-  Objeto3D: {fileID: 919132149155446097, guid: 811b44038b9d4114aa87be045a816507, type: 3}
+  Objeto3D: {fileID: 919132149155446097, guid: 22cad54c0d93fda479629444b6b697a8, type: 3}
   loc: 
   Llave: 1
   LlavesPuerta: 0
   LlavesCaja: 1
+  LlavesDiario: 0
   mensajes: Jmm recuerdo haber visto una caja cerrada en casa de Noah

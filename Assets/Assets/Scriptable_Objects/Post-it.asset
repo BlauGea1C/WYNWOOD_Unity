@@ -15,9 +15,10 @@ MonoBehaviour:
   id: 15
   itemsName: Post-it
   ItemIcono: {fileID: 21300000, guid: 3d8e1aba73ea24d4992530aad242354e, type: 3}
-  Objeto3D: {fileID: 919132149155446097, guid: 3958f506fcb9ad447aacbd8286b630a9, type: 3}
+  Objeto3D: {fileID: 919132149155446097, guid: dcd812b8bf0453c4b99cd85efe8a2414, type: 3}
   loc: 3
   Llave: 0
   LlavesPuerta: 0
   LlavesCaja: 0
+  LlavesDiario: 0
   mensajes: 
