@@ -19,7 +19,9 @@ public class Scr_Teleport : MonoBehaviour
     public Button Coffee;
     public Transform teleportPoint5;
     public Button casaAmelia;
-    
+    public Transform teleportPoint6;
+    public Button comisaria;
+
 
     void Start()
     {
@@ -34,6 +36,7 @@ public class Scr_Teleport : MonoBehaviour
         Escuela.interactable = false;
         Coffee.interactable = false;
         casaAmelia.interactable = false;
+        comisaria.interactable = false;
     }
 
     public void TeleportTo(Transform targetLocation)
@@ -72,13 +75,15 @@ public class Scr_Teleport : MonoBehaviour
         TeleportTo(teleportPoint4); 
         DialogManager.Instance.ShowMessage("Miraré en el almacén del fondo seguro que allí encuentro algo"); 
     }
-    public void TeleportTo5() { TeleportTo(teleportPoint5); }
-   // public void TeleportTo6() { TeleportTo(teleportPoint6); }
+    public void TeleportTo5() { TeleportTo(teleportPoint5);}
+   
 
     // Métodos para desbloquear botones
     public void DesbloquearBoton2() { casaNoah.interactable = true; }
     public void DesbloquearBoton3() { Escuela.interactable = true; }
     public void DesbloquearBoton4() { Coffee.interactable = true; }
-    //public void DesbloquearBoton5() { Escuela.interactable = true; }
+    
     public void DesbloquearBoton5() { casaAmelia.interactable = true; }
+
+    public void DesbloquearBoton6() { comisaria.interactable = true; }
 }

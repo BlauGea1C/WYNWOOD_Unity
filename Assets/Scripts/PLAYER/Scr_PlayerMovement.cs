@@ -36,33 +36,6 @@ public class Scr_PlayerMovement : MonoBehaviour
     public AudioSource audioMapa;
     public AudioSource audioPisadas;
 
-    /*void Start()
-    {
-        controller = GetComponent<CharacterController>();
-        playerCamera = Camera.main;
-
-        if (virtualCam == null)
-        {
-            Debug.LogError("Cinemachine Virtual Camera not assigned!");
-        }
-
-        if (inventoryManager == null)
-        {
-            Debug.LogError("Inventory Manager not assigned!");
-        }
-
-        // Bloqueamos el cursor sólo si el tutorial NO está activo
-        GameObject tutorialCanvas = GameObject.Find("CanvasTutorial");
-        if (tutorialCanvas != null && tutorialCanvas.activeSelf)
-        {
-            LockCursor(false); // Desbloquea el cursor
-            mira.SetActive(false);
-        }
-        else
-        {
-            LockCursor(true);
-        }
-    }*/
 
     void Start()
     {

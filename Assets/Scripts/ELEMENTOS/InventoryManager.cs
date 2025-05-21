@@ -543,6 +543,7 @@ public class InventoryManager : MonoBehaviour
                 case "3": teleportScript.DesbloquearBoton3(); break;
                 case "4": teleportScript.DesbloquearBoton4(); break;
                 case "5": teleportScript.DesbloquearBoton5(); break;
+                case "6": teleportScript.DesbloquearBoton5(); break;
             }
         }
 
