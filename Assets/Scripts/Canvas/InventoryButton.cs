@@ -61,7 +61,7 @@ public class InventoryButton : MonoBehaviour
         {
             audioSourceBotones.Play();
             panelToCloseCalaix.SetActive(false);
-            DialogManager.Instance.ShowMessage("Tengo que avisar a mi madre, algo bueno habra por ser hija de la sheriff");
+            DialogManager.Instance.ShowMessage("Tengo que ir rápido a comisaría, creo que ya he resurtido el caso");
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }

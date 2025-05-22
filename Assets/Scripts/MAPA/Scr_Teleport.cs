@@ -19,7 +19,7 @@ public class Scr_Teleport : MonoBehaviour
     public Button Coffee;
     public Transform teleportPoint5;
     public Button casaAmelia;
-    public Transform teleportPoint6;
+    
     public Button comisaria;
 
 
